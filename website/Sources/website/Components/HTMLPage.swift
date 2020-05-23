@@ -1,15 +1,15 @@
 import Foundation
 
-struct HTMLPage: Displayable {
+class HTMLPage: HTMLComponent {
     let head: HTMLHead
-    let body: String
-    func render() -> String {
+
+    override func render() -> String {
         """
         <!doctype html>
         <html>
             \(head.render())
             <body>
-                \(body)
+                \(body ?? "")
             </body>
         </html>
         """
@@ -17,23 +17,18 @@ struct HTMLPage: Displayable {
     
     init(_ head: HTMLHead, _ body: String) {
         self.head = head
-        self.body = body
+        super.init("<html>", body: body, "</html>")
     }
 }
 
 extension HTMLPage {
-    init(head: HTMLHead, @HTMLComponentBuilder _ component: () -> HTMLComponent) {
+    convenience init(head: HTMLHead, @HTMLComponentBuilder _ component: () -> HTMLComponent) {
         self.init(head, component().render())
     }
 }
 
-struct HTMLHead: Displayable {
-    func render() -> String {
-        """
-        <head></head>
-        """
-    }
+class HTMLHead: HTMLComponent {
     init() {
-        
+        super.init("<head>", "</head>")
     }
 }

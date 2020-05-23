@@ -7,52 +7,50 @@ enum HTMLTag: String {
     case html = "html"
 }
 
-protocol HTMLComponentProtocol: Displayable {
-    var openingTag: String { get set }
-    var closingTag: String { get set }
-}
-
-struct HTMLComponent: HTMLComponentProtocol {
+class HTMLComponent: Displayable {
     var openingTag: String
     var closingTag: String
+    var body: String?
     
     func render() -> String {
-        openingTag + closingTag
+        openingTag + (body ?? "") + closingTag
+    }
+    
+    init (_ openingTag: String, body:String? = nil, _ closingTag: String) {
+        self.openingTag = openingTag
+        self.closingTag = closingTag
+        self.body = body
     }
 }
 
-extension HTMLComponentProtocol {
-    init (_ openingTag: String, _ closingTag: String) {
-        self.openingTag = openingTag
-        self.closingTag = closingTag
-    }
-    
-    init(_ tag: HTMLTag, @HTMLComponentBuilder _ component: () -> HTMLComponentProtocol) {
+extension HTMLComponent {
+    convenience init(_ tag: HTMLTag, @HTMLComponentBuilder _ component: () -> HTMLComponent) {
         self.init("<\(tag)>", "</\(tag)>", component)
     }
     
-    init(_ openingTag: String, _ closingTag: String, @HTMLComponentBuilder _ component: () -> HTMLComponentProtocol) {
+    convenience init(_ openingTag: String, _ closingTag: String, @HTMLComponentBuilder _ component: () -> HTMLComponent) {
         self.init(
             openingTag.appending(component().openingTag),
             closingTag.appending(component().closingTag)
         )
     }
     
-    init(@HTMLComponentBuilder _ component: () -> HTMLComponentProtocol) {
+    convenience init(@HTMLComponentBuilder _ component: () -> HTMLComponent) {
         self.init(component().openingTag, component().closingTag)
   }
 }
 
 @_functionBuilder
 struct HTMLComponentBuilder {
-    static func buildBlock(_ components: HTMLComponentProtocol...) -> HTMLComponent {
-        var openingTag = ""
-        var closingTag = ""
+    static func buildBlock(_ components: HTMLComponent...) -> HTMLComponent {
+        var openingTags = [String]()
+        var closingTags = [String]()
         for component in components {
-            openingTag.append(component.openingTag)
-            closingTag.append(component.closingTag)
+            openingTags.append(component.openingTag)
+            closingTags.insert(component.closingTag, at: 0)
         }
+        let body = components.last?.body ?? ""
         
-        return HTMLComponent(openingTag, closingTag)
+        return HTMLComponent(openingTags.joined(), body: body, closingTags.joined())
     }
 }
