@@ -10,4 +10,12 @@ struct Sidebar: ComponentType {
             }
         }
     }
+    private func makeLink(_ title: String, href: String) -> HTMLComponent {
+        // TODO: make these extensions work on simpleHTMLComponenet... or get rid of it
+        SimpleHTMLComponent(title, attributes: ["href": href], .a)
+            .padding(top: 20, percentage: true)
+            .textDecoration(.none)
+            .font(weight: "regular", size: 20, family: "SF Mono")
+            .textAlign(.left)
+    }
 }

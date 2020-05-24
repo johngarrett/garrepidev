@@ -4,11 +4,12 @@ struct About: HTMLPage {
     static var relativeAddress = "about.html"
     func render() -> HTMLComponent {
         HTMLComponent {
-                HTMLComponent(.header1, attributes: ["class": "g_header text-center"]) {
-                    "About"
-                }
+            HTMLComponent(.header1) { "About" }
+                .color("black")
+                .font(weight: "bold", size: 45, family: "SF Mono")
+                .padding(top: 10, bottom: 10)
                 
-                Paragraph(  
+            Paragraph(
                     """
                     Welcome to my website. Here is where I host all my projects and blogs.
                     See below for more information.
