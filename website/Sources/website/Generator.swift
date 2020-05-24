@@ -1,7 +1,7 @@
 import Foundation
 
 struct Generator {
-    static func render(component: Displayable) {
+    static func render(_ component: Displayable) {
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
 
             let fileURL = dir.appendingPathComponent("/temp/index.html")
