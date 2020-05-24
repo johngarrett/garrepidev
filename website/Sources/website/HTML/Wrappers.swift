@@ -1,16 +1,28 @@
 import Foundation
 
-class Paragraph: HTMLComponent {
+class SimpleHTMLComponent: HTMLComponent {
     let text: String!
-    init(_ text: String) {
+    init(_ text: String, _ tag: HTMLTag) {
         self.text = text
-        super.init(.paragraph)
+        super.init(tag)
     }
     
     override func render() -> String {
         self.tag.opening() +
         self.text +
         self.tag.closing()
+    }
+}
+
+class Paragraph: SimpleHTMLComponent {
+    init(_ text: String) {
+        super.init(text, .paragraph)
+    }
+}
+
+class Comment: SimpleHTMLComponent {
+    init(_ text: String) {
+        super.init(text, .comment)
     }
 }
 

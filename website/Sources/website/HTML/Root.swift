@@ -38,7 +38,7 @@ class Head: HTMLComponent {
     
     init(title: String) {
         self.title = title
-        super.init(.head, nil)
+        super.init(.head)
     }
 }
 
