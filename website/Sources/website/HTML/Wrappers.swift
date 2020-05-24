@@ -15,7 +15,7 @@ class SimpleHTMLComponent: HTMLComponent {
 }
 
 class Paragraph: SimpleHTMLComponent {
-    init(attributes: [String:String]? = nil, _ text: String) {
+    init(attributes: [String:String] = ["class": "g_body_paragraph"], _ text: String) {
         super.init(text, attributes: attributes, .paragraph)
     }
 }

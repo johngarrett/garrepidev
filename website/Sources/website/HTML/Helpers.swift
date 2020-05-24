@@ -21,6 +21,7 @@ enum HTMLTag: String {
     case unordered_list = "ul"
 
     case br
+    case img
     case div
     case footer
     
@@ -47,7 +48,7 @@ enum HTMLTag: String {
     
     func closing() -> String {
         switch self {
-        case .empty:
+        case .empty, .img:
             return ""
         case .comment:
             return "-->"
