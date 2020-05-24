@@ -6,34 +6,9 @@ struct Projects: HTMLPage {
     
     func render() -> HTMLComponent {
         HTMLComponent(.div, attributes: ["class": "g_cards"]) {
-            HTMLComponent(.div, attributes: ["class": "g_card"]) {
-                HTMLComponent(.div, attributes: ["class": "g_horizontal"]) {
-                    HTMLComponent(.header1) { "Project's Name" }
-                    HTMLComponent(.div, attributes: ["class": "g_code_tag"]) {
-                        HTMLComponent(.paragraph) { "swift" }
-                    }
-                }
-                Paragraph("Hello I am a card with a name and a personality!")
-                SimpleHTMLComponent("", attributes: ["src": "https://code.visualstudio.com/assets/docs/editor/integrated-terminal/integrated-terminal.png"], .img)
-            }
-            HTMLComponent(.div, attributes: ["class": "g_card"]) {
-                HTMLComponent(.div, attributes: ["class": "g_horizontal"]) {
-                    HTMLComponent(.header1) { "Project's Name" }
-                    HTMLComponent(.div, attributes: ["class": "g_code_tag"]) {
-                        HTMLComponent(.paragraph) { "rust" }
-                    }
-                }
-                Paragraph("Hello I am a card with  I hae more operosn pick me pick me picke me a name and a personality!")
-            }
-            HTMLComponent(.div, attributes: ["class": "g_card"]) {
-                HTMLComponent(.div, attributes: ["class": "g_horizontal"]) {
-                    HTMLComponent(.header1) { "Project's Name" }
-                    HTMLComponent(.div, attributes: ["class": "g_code_tag"]) {
-                        HTMLComponent(.paragraph) { "FORTRAN" }
-                    }
-                }
-                Paragraph("Hello I am a card witPLEAS PIck lme i have so much personality. I am the card you Want!!!!! h a name and a personality!")
-            }
+            ProjectCard(title: "Project's Name", codeTag: CodeTag("swift"), text: "Hello I am a card with personaltiy", imgURL: "https://code.visualstudio.com/assets/docs/editor/integrated-terminal/integrated-terminal.png")
+            ProjectCard(title: "Project's Name", codeTag: CodeTag("rust"), text: "Hello I am a card with another persona lakpersonaltiy", imgURL: "")
+            ProjectCard(title: "Project's Name", codeTag: CodeTag("fortran"), text: "Hello I am amore workds for me please card with personaltiy", imgURL: "")
         }
     }
 }
