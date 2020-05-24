@@ -2,6 +2,7 @@ import Foundation
 
 class HTMLComponent: Displayable {
     var tag: HTMLTag
+    var attributes: [String: String]?
     var childComponents: [HTMLComponent]?
     private let id: Int
     
@@ -10,12 +11,12 @@ class HTMLComponent: Displayable {
         for component in childComponents ?? [] {
             renderedComponents.append(component.render())
         }
-        
-        return tag.opening() + renderedComponents + tag.closing()
+        return tag.opening(attributes) + renderedComponents + tag.closing()
     }
 
-    init (_ tag: HTMLTag, _ childComponents: [HTMLComponent]? = nil) {
+    init (_ tag: HTMLTag, attributes: [String: String]? = nil, _ childComponents: [HTMLComponent]? = nil) {
         self.tag = tag
+        self.attributes = attributes
         self.childComponents = childComponents
         self.id = UUID.init().hashValue
     }
@@ -23,23 +24,26 @@ class HTMLComponent: Displayable {
 
 
 extension HTMLComponent {
-    convenience init(_ tag: HTMLTag, @HTMLComponentBuilder _ component: () -> HTMLComponent) {
+    convenience init(_ tag: HTMLTag? = nil, attributes: [String: String]? = nil, @HTMLComponentBuilder _ component: () -> HTMLComponent) {
         self.init(
-            tag,
+            tag ?? HTMLTag.empty,
+            attributes: attributes,
             [component()]
         )
     }
     
-    convenience init(_ tag: HTMLTag, @HTMLComponentBuilder _ components: () -> [HTMLComponent]) {
+    convenience init(_ tag: HTMLTag, attributes: [String: String]? = nil, @HTMLComponentBuilder _ components: () -> [HTMLComponent]) {
            self.init(
                tag,
+               attributes: attributes,
                components()
            )
        }
     
-    convenience init(_ tag: HTMLTag, @HTMLComponentBuilder _ component: () -> String) {
+    convenience init(_ tag: HTMLTag, attributes: [String: String]? = nil, @HTMLComponentBuilder _ component: () -> String) {
         self.init(
             tag,
+            attributes: attributes,
             [RawText(component())]
         )
     }

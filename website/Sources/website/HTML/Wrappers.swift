@@ -2,21 +2,21 @@ import Foundation
 
 class SimpleHTMLComponent: HTMLComponent {
     let text: String!
-    init(_ text: String, _ tag: HTMLTag) {
+    init(_ text: String, attributes: [String: String]? = nil, _ tag: HTMLTag) {
         self.text = text
-        super.init(tag)
+        super.init(tag, attributes: attributes)
     }
     
     override func render() -> String {
-        self.tag.opening() +
+        self.tag.opening(attributes) +
         self.text +
         self.tag.closing()
     }
 }
 
 class Paragraph: SimpleHTMLComponent {
-    init(_ text: String) {
-        super.init(text, .paragraph)
+    init(attributes: [String:String]? = nil, _ text: String) {
+        super.init(text, attributes: attributes, .paragraph)
     }
 }
 
