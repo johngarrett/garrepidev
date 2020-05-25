@@ -11,8 +11,8 @@ class ProjectCard: HTMLComponent {
                 }
                 Paragraph(text)
                 Image(url: imgURL)
-                    .margin(right: 5, left: 5, percentage: true)
-                    .width(90, percentage: true)
+                    .margin(right: 5, left: 5, .percentage)
+                    .width(90, .percentage)
                     .maxHeight(250)
                     .objectFit(.cover)
             }
@@ -20,10 +20,10 @@ class ProjectCard: HTMLComponent {
             .maxWidth(500)
             .minHeight(200)
             .borderRadius(15)
-            .backgroundColor("white")
+            .backgroundColor(GColors.white)
             .padding(right: 20, left: 20)
             .margin(top: 10, right: 10, left: 10)
-            .shadow(y: 2, spread: 4, blur: 16, color: "rgba(205, 205, 205, 0.3)")
+            .shadow(y: 2, spread: 4, blur: 16, color: GColors.cardShadow)
         
         super.init(.empty, [card])
     }
@@ -36,10 +36,10 @@ class CodeTag: HTMLComponent {
                 HTMLComponent(.paragraph) { language }
                     .margin(top: 2, right: 10, bottom: 2, left: 10)
                     .textAlign(.center)
-                    .color("white")
+                    .color(GColors.white)
                     .font(weight: "bold", size: 13, family: "SF Mono")
             }
-            .backgroundColor("#FFD6AF")
+            .backgroundColor(CSSColor("#FFD6AF"))
             .borderRadius(8)
             .whiteSpace(.nowrap)
         

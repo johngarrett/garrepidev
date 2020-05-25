@@ -11,7 +11,7 @@ struct Projects: HTMLPage {
             ProjectCard(title: "Project's Name", codeTag: CodeTag("fortran"), text: "Hello I am amore workds for me please card with personaltiy", imgURL: "")
         }
     .maxWidth(1200)
-    .margin(right: 5, left: 5, percentage: true)
+        .margin(right: 5, left: 5, .percentage)
     .rawCSS("display", "grid")
     .rawCSS("grid-gap", "1rem")
     }

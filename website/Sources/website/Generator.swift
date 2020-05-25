@@ -1,6 +1,19 @@
 import Foundation
 
 struct Generator {
+    static func updateStyleSheet(with values: String) {
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            if let fileHanlder = try? FileHandle(forUpdating: dir.appendingPathComponent("/temp/styles2.css")) {
+                fileHanlder.seekToEndOfFile()
+                fileHanlder.write(values.data(using: .utf8)!)
+            } else {
+                print("Could not write to style sheet")
+           }
+       } else {
+           print("Could not get directory")
+        }
+    }
+    
     static func render(_ component: Displayable, to filename: String = "index.html") {
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
 
@@ -25,7 +38,7 @@ struct Generator {
                     page.render()
                 }
             }
-            .margin(left: 15, percentage: true)
+            .margin(left: 15, .percentage)
             .padding(top: 5, right: 20, left: 20)
             .rawCSS("position", "absolute")
             .rawCSS("float", "left")

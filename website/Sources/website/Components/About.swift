@@ -5,7 +5,7 @@ struct About: HTMLPage {
     func render() -> HTMLComponent {
         HTMLComponent {
             HTMLComponent(.header1) { "About" }
-                .color("black")
+                .color(GColors.black)
                 .font(weight: "bold", size: 45, family: "SF Mono")
                 .padding(top: 10, bottom: 10)
                 
