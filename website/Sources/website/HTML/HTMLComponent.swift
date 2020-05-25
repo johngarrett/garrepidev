@@ -14,8 +14,6 @@ class HTMLComponent: Displayable {
         return tag.opening(attributes) + renderedComponents + tag.closing()
     }
     
-  
-    
     init (_ tag: HTMLTag, attributes: [String: String]? = nil, _ childComponents: [HTMLComponent]? = nil) {
         self.tag = tag
         self.attributes = attributes

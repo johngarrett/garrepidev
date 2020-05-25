@@ -21,8 +21,14 @@ struct Generator {
         let component = Root(title: title) {
             page.sidebar.render()
             HTMLComponent(.div, attributes: ["class": "g_main"]) {
-                page.render()
+                HTMLComponent(.div) {
+                    page.render()
+                }
             }
+            .margin(left: 15, percentage: true)
+            .padding(top: 5, right: 20, left: 20)
+            .rawCSS("position", "absolute")
+            .rawCSS("float", "left")
         }
         render(component, to: type(of: page).relativeAddress)
     }

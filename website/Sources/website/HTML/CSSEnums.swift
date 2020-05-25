@@ -7,6 +7,10 @@ enum TextAlign: String {
 enum ObjectFit: String {
     case cover
 }
+
+enum DisplayType: String {
+    case grid
+}
 enum TextDecoration: String {
     case none
 }

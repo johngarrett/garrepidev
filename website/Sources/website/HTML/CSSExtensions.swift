@@ -8,6 +8,14 @@ extension HTMLComponent {
         return newComponent(with: "margin:\(top)\(unit) \(right)\(unit) \(bottom)\(unit) \(left)\(unit);")
     }
     
+    func position(top: Int, left: Int) -> HTMLComponent {
+        newComponent(with: "top: \(top); left: \(left);")
+    }
+    
+    func zIndex(_ index: Int) -> HTMLComponent {
+        newComponent(with: "z-index: \(index);")
+    }
+    
     func color(_ color: String) -> HTMLComponent {
         newComponent(with: "color:\(color);")
     }
@@ -70,8 +78,16 @@ extension HTMLComponent {
         newComponent(with: "border-radius: \(radius)px;")
     }
     
+    func display(_ dt: DisplayType) -> HTMLComponent {
+        newComponent(with: "display: \(dt.rawValue);")
+    }
+    
     func font(weight: String, size: Int, family: String) -> HTMLComponent {
         newComponent(with: "font-weight:\(weight); font-size:\(size)px; font-family:\(family);")
+    }
+    
+    func rawCSS(_ key: String, _ value: String) -> HTMLComponent {
+        newComponent(with: "\(key): \(value);")
     }
     
     func padding(top: Int=0, right: Int=0, bottom: Int=0, left: Int=0, percentage: Bool = false) -> HTMLComponent {
@@ -86,6 +102,8 @@ extension HTMLComponent {
         } else {
             newAttributes["style"]!.append(style)
         }
-        return HTMLComponent(self.tag, attributes: newAttributes, self.childComponents)
+        
+        self.attributes = newAttributes
+        return self
     }
 }
