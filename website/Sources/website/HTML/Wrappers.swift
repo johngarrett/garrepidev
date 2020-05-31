@@ -2,7 +2,7 @@ import Foundation
 
 class SimpleHTMLComponent: HTMLComponent {
     let text: String!
-    init(_ text: String, attributes: [String: String]? = nil, _ tag: HTMLTag) {
+    init(_ text: String, attributes: [String: String] = ["":""], _ tag: HTMLTag) {
         self.text = text
         super.init(tag, attributes: attributes)
     }

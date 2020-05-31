@@ -1,0 +1,11 @@
+import Foundation
+
+enum GClasses: String, CustomStringConvertible {
+    case projectCard = "g_project_card"
+    case projectCardsGrid = "g_project_cards"
+    case sidebar = "g_sidebar"
+    case horizontal =  "g_horizontal"
+    var description: String {
+        self.rawValue
+    }
+}

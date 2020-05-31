@@ -88,20 +88,20 @@ extension HTMLComponent {
     }
     
     func saveToStyleSheet() -> HTMLComponent {
-        guard let className = attributes?["class"] else {
-            print("NO CLASS NAME DUMBASS")
+        guard let className = attributes["class"], let style = attributes["style"] else {
+            print("missing class or style attributes")
             return self
         }
         Generator.updateStyleSheet(with: """
             .\(className) {
-            \(attributes!["style"]!)
+            \(style)
             }
         """)
         return self
     }
     
     private func newComponent(with style: String) -> HTMLComponent {
-        var newAttributes = self.attributes ?? ["": ""]
+        var newAttributes = self.attributes
         if newAttributes["style"] == nil {
             newAttributes["style"] = style
         } else {

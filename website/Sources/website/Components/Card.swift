@@ -3,8 +3,8 @@ import Foundation
 class ProjectCard: HTMLComponent {
     init(title: String, codeTag: CodeTag, text: String, imgURL: String) {
         let card =
-            HTMLComponent(.div, attributes: ["class": "g_card"]) {
-                HTMLComponent(.div, attributes: ["class": "g_horizontal"]) {
+            HTMLComponent(.div, className: GClasses.projectCard.rawValue) {
+                HTMLComponent(.div, className: GClasses.horizontal.rawValue) {
                     HTMLComponent(.header1) { title }
                         .font(weight: "bold", size: 25, family: "SF Mono")
                     codeTag
