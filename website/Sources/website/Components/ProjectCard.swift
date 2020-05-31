@@ -32,8 +32,14 @@ class ProjectCard: HTMLComponent {
         super.init(.empty, [card])
     }
 }
+extension ProjectCard {
+    convenience init(from project: Project) {
+        self.init(title: project.title, codeTag: project.tag, text: project.body, imgURL: project.imageURL ?? "")
+    }
+}
 
 class CodeTag: HTMLComponent {
+    
     init(_ language: String) {
         let tag =
             HTMLComponent(.div) {
@@ -50,3 +56,4 @@ class CodeTag: HTMLComponent {
         super.init(.empty, [tag])
     }
 }
+

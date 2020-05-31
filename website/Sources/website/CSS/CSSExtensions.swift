@@ -36,11 +36,11 @@ extension HTMLComponent {
         updateComponent(with: "max-height:\(CSSUnit(height, type));")
     }
     func minHeight(_ height: Double, _ type: CSSUnit.UnitType = .px) -> HTMLComponent {
-        return updateComponent(with: "min-height:\(CSSUnit(height, type));")
+        updateComponent(with: "min-height:\(CSSUnit(height, type));")
     }
     
     func shadow(x: Int=0, y:Int=0, spread:Int=0, blur:Int = 0, color: CSSColor) -> HTMLComponent {
-        return updateComponent(with: "box-shadow:\(x)px \(y)px \(blur)px \(spread)px \(color.description);")
+        updateComponent(with: "box-shadow:\(x)px \(y)px \(blur)px \(spread)px \(color.description);")
     }
     
     func wordWrap(_ wrap: WordWrap) -> HTMLComponent {
@@ -84,7 +84,7 @@ extension HTMLComponent {
     }
     
     func padding(top: Double=0, right: Double=0, bottom: Double=0, left: Double=0, _ type: CSSUnit.UnitType = .px) -> HTMLComponent {
-        return updateComponent(with: "padding:\(CSSUnit(top, type)) \(CSSUnit(right, type)) \(CSSUnit(bottom, type)) \(CSSUnit(left, type));")
+        updateComponent(with: "padding:\(CSSUnit(top, type)) \(CSSUnit(right, type)) \(CSSUnit(bottom, type)) \(CSSUnit(left, type));")
     }
     
     private func updateComponent(with style: String) -> HTMLComponent {

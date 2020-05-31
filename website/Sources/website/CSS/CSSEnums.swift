@@ -10,6 +10,7 @@ enum ObjectFit: String {
 
 enum DisplayType: String {
     case grid
+    case block
 }
 enum TextDecoration: String {
     case none

@@ -10,6 +10,10 @@ struct Sidebar: ComponentType {
             }
             .padding(top: 20, left: 20, .percentage)
             .rawCSS("margin", "0 auto")
+            .rawCSS("text-decoration", "none")
+            .color(CSSColor("#ffffff"))
+            .display(.block)
+            .textAlign(.left)
         }
             
         .height(100, .percentage)
