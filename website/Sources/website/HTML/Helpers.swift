@@ -36,6 +36,9 @@ enum HTMLTag: String {
         default:
             if let attributes = attributes {
                 let flattenedAttributes = (attributes.compactMap { key, value -> String in
+                    if (key == "class" && value == "") || (key == "") || (value == "") {
+                        return ""
+                    }
                     return "\(key)=\"\(value)\""
                 } as Array).joined(separator: " ")
                                 

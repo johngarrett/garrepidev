@@ -3,11 +3,15 @@ import Foundation
 struct CSSStyleSheet {
     static var stylesheet: [String: [String]] = ["": [""]]
     static func add(_ linearKV: String, for className: String) {
-        if stylesheet[className] != nil {
+        stylesheet[className] = stylesheet[className] ?? [""]
+        // temporary, TODO: switch to dictionary
+        if !stylesheet[className]!.contains(linearKV) {
             stylesheet[className]!.append(linearKV)
-        } else {
-            stylesheet[className] = [linearKV]
         }
+    }
+    
+    static func add(_ linearKV: String, for tag: HTMLTag, parent parentClass: String) {
+        add(linearKV, for: "\(parentClass) \(tag.rawValue)")
     }
     
     static func generateStyleSheet() -> String {

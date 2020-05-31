@@ -9,6 +9,10 @@ class ProjectCard: HTMLComponent {
                         .font(weight: "bold", size: 25, family: "SF Mono")
                     codeTag
                 }
+                    .rawCSS("display", "flex")
+                    .rawCSS("flex-direction", "row")
+                    .rawCSS("align-items", "center")
+                    .rawCSS("justify-content", "space-between")
                 Paragraph(text)
                 Image(url: imgURL)
                     .margin(right: 5, left: 5, .percentage)

@@ -35,7 +35,7 @@ struct Generator {
         render(component, to: type(of: page).relativeAddress)
     }
     
-    static private func renderStyleSheet(to filename: String = "style2.css") {
+    static private func renderStyleSheet(to filename: String = "styles2.css") {
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
             let fileURL = dir.appendingPathComponent("/temp/\(filename)")
             do {
