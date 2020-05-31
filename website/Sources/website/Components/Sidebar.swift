@@ -22,7 +22,6 @@ struct Sidebar: ComponentType {
         .rawCSS("float", "left")
         .rawCSS("position", "fixed")
         .rawCSS("overflow-x", "hidden")
-        .saveToStyleSheet()
     }
     private func makeLink(_ title: String, href: String) -> HTMLComponent {
         // TODO: make these extensions work on simpleHTMLComponenet... or get rid of it

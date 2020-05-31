@@ -87,28 +87,18 @@ extension HTMLComponent {
         return newComponent(with: "padding:\(CSSUnit(top, type)) \(CSSUnit(right, type)) \(CSSUnit(bottom, type)) \(CSSUnit(left, type));")
     }
     
-    func saveToStyleSheet() -> HTMLComponent {
-        guard let className = attributes["class"], let style = attributes["style"] else {
-            print("missing class or style attributes")
-            return self
-        }
-        Generator.updateStyleSheet(with: """
-            .\(className) {
-            \(style)
-            }
-        """)
-        return self
-    }
-    
     private func newComponent(with style: String) -> HTMLComponent {
-        var newAttributes = self.attributes
-        if newAttributes["style"] == nil {
-            newAttributes["style"] = style
+        if let className = self.attributes["class"], className != "" {
+            CSSStyleSheet.add(style, for: className)
         } else {
-            newAttributes["style"]!.append(style)
+            var newAttributes = self.attributes
+            if newAttributes["style"] == nil {
+                newAttributes["style"] = style
+            } else {
+                newAttributes["style"]!.append(style)
+            }
+            self.attributes = newAttributes
         }
-        
-        self.attributes = newAttributes
         return self
     }
 }

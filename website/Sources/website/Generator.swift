@@ -1,20 +1,8 @@
 import Foundation
 
 struct Generator {
-    static func updateStyleSheet(with values: String) {
-        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-            if let fileHanlder = try? FileHandle(forUpdating: dir.appendingPathComponent("/temp/styles2.css")) {
-                fileHanlder.seekToEndOfFile()
-                fileHanlder.write(values.data(using: .utf8)!)
-            } else {
-                print("Could not write to style sheet")
-           }
-       } else {
-           print("Could not get directory")
-        }
-    }
-    
     static func render(_ component: Displayable, to filename: String = "index.html") {
+        renderStyleSheet()
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
 
             let fileURL = dir.appendingPathComponent("/temp/\(filename)")
@@ -31,6 +19,7 @@ struct Generator {
     }
     
     static func render(_ page: HTMLPage, with title: String) {
+        renderStyleSheet()
         let component = Root(title: title) {
             page.sidebar.render()
             HTMLComponent(.div, attributes: ["class": "g_main"]) {
@@ -45,4 +34,19 @@ struct Generator {
         }
         render(component, to: type(of: page).relativeAddress)
     }
+    
+    static private func renderStyleSheet(to filename: String = "style2.css") {
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            let fileURL = dir.appendingPathComponent("/temp/\(filename)")
+            do {
+                try CSSStyleSheet.generateStyleSheet().write(to: fileURL, atomically: false, encoding: .utf8)
+            }
+            catch {
+                print("Could not write to \(filename)")
+            }
+        } else {
+            print("Could not get directory")
+        }
+    }
+    
 }
