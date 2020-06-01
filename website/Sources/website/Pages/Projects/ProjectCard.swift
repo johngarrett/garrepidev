@@ -1,7 +1,7 @@
 import Foundation
 
 class ProjectCard: HTMLComponent {
-    init(title: String, codeTag: CodeTag, text: String, imgURL: String) {
+    init(title: String, codeTag: Tag, text: String, imgURL: String) {
         let card =
             HTMLComponent(.div, className: GClasses.projectCard.rawValue) {
                 HTMLComponent(.div, className: GClasses.horizontal.rawValue) {
@@ -33,17 +33,32 @@ class ProjectCard: HTMLComponent {
     }
 }
 extension ProjectCard {
-    convenience init(from project: Project) {
+    convenience init(from project: ProjectPreview) {
         self.init(title: project.title, codeTag: project.tag, text: project.body, imgURL: project.imageURL ?? "")
     }
 }
 
-class CodeTag: HTMLComponent {
-    
+class Tag: HTMLComponent {
     init(_ language: String) {
         let tag =
             HTMLComponent(.div) {
                 HTMLComponent(.paragraph) { language }
+                    .margin(top: 2, right: 10, bottom: 2, left: 10)
+                    .textAlign(.center)
+                    .color(GColors.white)
+                    .font(weight: "bold", size: 13, family: "SF Mono")
+            }
+            .backgroundColor(CSSColor("#FFD6AF"))
+            .borderRadius(8)
+            .whiteSpace(.nowrap)
+        
+        super.init(.empty, [tag])
+    }
+    
+    init(topic: String) {
+        let tag =
+            HTMLComponent(.div) {
+                HTMLComponent(.paragraph) { topic }
                     .margin(top: 2, right: 10, bottom: 2, left: 10)
                     .textAlign(.center)
                     .color(GColors.white)
