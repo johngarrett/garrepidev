@@ -18,11 +18,11 @@ struct Projects: HTMLPage {
     init() {
         self.projects = [
             Project("Project's name",
-                    body: "Hello I am a card with personality",
+                    body: "Hello I am a *card* `with` personality",
                     imageURL: "https://code.visualstudio.com/assets/docs/editor/integrated-terminal/integrated-terminal.png",
                     CodeTag("swift"))
             ,Project("Project's name",
-                     body: "Hello I am a card with personality",
+                     body: "Hello I am a _card_ with personality",
                      imageURL: "https://code.visualstudio.com/assets/docs/editor/integrated-terminal/integrated-terminal.png",
                      CodeTag("rust"))
             ,Project("Project's name",
@@ -30,7 +30,7 @@ struct Projects: HTMLPage {
                      imageURL: "https://code.visualstudio.com/assets/docs/editor/integrated-terminal/integrated-terminal.png",
                      CodeTag("fortran")),
             Project("Project's name",
-                    body: "Hello I am a card with personality",
+                    body: "Hello I ~~am~~ a card with personality",
                     imageURL: "https://code.visualstudio.com/assets/docs/editor/integrated-terminal/integrated-terminal.png",
                     CodeTag("basic"))
         ]

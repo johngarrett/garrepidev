@@ -13,7 +13,7 @@ class ProjectCard: HTMLComponent {
                     .rawCSS("flex-direction", "row")
                     .rawCSS("align-items", "center")
                     .rawCSS("justify-content", "space-between")
-                Paragraph(text)
+                Markdown(text)
                 Image(url: imgURL)
                     .margin(right: 5, left: 5, .percentage)
                     .width(90, .percentage)
