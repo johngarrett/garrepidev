@@ -1,11 +1,11 @@
 import Foundation
 
-class HTMLComponent: Displayable {
+class HTMLComponent: HTMLElement {
     var tag: HTMLTag
+    var className: String
     var attributes: [String: String]
-    var childComponents: [HTMLComponent]?
-    private let id: Int
-    
+    var childComponents: [HTMLElement]?
+
     func render() -> String {
         var renderedComponents = ""
         for component in childComponents ?? [] {
@@ -14,18 +14,18 @@ class HTMLComponent: Displayable {
         return tag.opening(attributes) + renderedComponents + tag.closing()
     }
     
-    init (_ tag: HTMLTag, className: String = "", attributes: [String: String] = ["": ""], _ childComponents: [HTMLComponent]? = nil) {
+    init (_ tag: HTMLTag, className: String = "", attributes: [String: String] = ["": ""], _ childComponents: [HTMLElement]? = nil) {
         self.tag = tag
         self.attributes = attributes
         self.childComponents = childComponents
-        self.id = UUID.init().hashValue
+        self.className = className
         self.attributes["class"] = className
     }
 }
 
 
 extension HTMLComponent {
-    convenience init(_ tag: HTMLTag? = nil, className: String? = nil, attributes: [String: String]? = nil, @HTMLComponentBuilder _ component: () -> HTMLComponent) {
+    convenience init(_ tag: HTMLTag? = nil, className: String? = nil, attributes: [String: String]? = nil, @HTMLComponentBuilder _ component: () -> HTMLElement) {
         self.init(
             tag ?? HTMLTag.empty,
             className: className ?? "",
@@ -34,7 +34,7 @@ extension HTMLComponent {
         )
     }
     
-    convenience init(_ tag: HTMLTag, className: String? = nil,  attributes: [String: String]? = nil, @HTMLComponentBuilder _ components: () -> [HTMLComponent]) {
+    convenience init(_ tag: HTMLTag, className: String? = nil,  attributes: [String: String]? = nil, @HTMLComponentBuilder _ components: () -> [HTMLElement]) {
            self.init(
                tag,
                className: className ?? "",
@@ -55,13 +55,13 @@ extension HTMLComponent {
 
 @_functionBuilder
 struct HTMLComponentBuilder {
-    static func buildBlock(_ components: HTMLComponent...) -> HTMLComponent {
+    static func buildBlock(_ components: HTMLElement...) -> HTMLElement {
         return HTMLComponent(.empty, components)
     }
 }
 
 extension HTMLComponent: Equatable {
     static func == (lhs: HTMLComponent, rhs: HTMLComponent) -> Bool {
-        return lhs.id == rhs.id
+        return lhs.className == rhs.className
     }
 }

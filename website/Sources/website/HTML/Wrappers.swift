@@ -26,14 +26,18 @@ class Comment: SimpleHTMLComponent {
     }
 }
 
-class RawText: HTMLComponent {
+class RawText: HTMLElement {
+    var tag: HTMLTag = .empty
+    var className: String = ""
+    var attributes: [String : String] = ["":""]
+    var childComponents: [HTMLElement]? = nil
     let rawString: String
-    override func render() -> String {
+    
+    func render() -> String {
         self.rawString
     }
     
     init(_ rawString: String) {
         self.rawString = rawString
-        super.init(.empty)
     }
 }

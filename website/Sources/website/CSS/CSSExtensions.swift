@@ -88,7 +88,7 @@ extension HTMLComponent {
     }
     
     private func updateComponent(with style: String) -> HTMLComponent {
-        if let className = self.attributes["class"], className != "" {
+        if className != "" {
             if self.tag != .div && self.tag != .empty {
                 CSSStyleSheet.add(style, for: self.tag, parent: className)
             } else {
