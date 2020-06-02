@@ -1,7 +1,7 @@
 import Foundation
 
-struct Projects: HTMLPage {
-    private var projects: [ProjectPreview]
+struct ProjectsOverview: HTMLPage {
+    private var projects: [Project]
     var sidebar: ComponentType = Sidebar()
     static var relativeAddress = "projects.html"
     
@@ -17,19 +17,19 @@ struct Projects: HTMLPage {
     
     init() {
         self.projects = [
-            ProjectPreview("Project's name",
+            Project("Project's name",
                     body: "Hello I am a *card* `with` personality",
                     imageURL: "https://code.visualstudio.com/assets/docs/editor/integrated-terminal/integrated-terminal.png",
                     Tag("swift"))
-            ,ProjectPreview("Project's name",
+            ,Project("Project's name",
                      body: "Hello I am a _card_ with personality",
                      imageURL: "https://code.visualstudio.com/assets/docs/editor/integrated-terminal/integrated-terminal.png",
                      Tag("rust"))
-            ,ProjectPreview("Project's name",
+            ,Project("Project's name",
                      body: "Hello I am a card with personality",
                      imageURL: "https://code.visualstudio.com/assets/docs/editor/integrated-terminal/integrated-terminal.png",
                      Tag("fortran")),
-            ProjectPreview("Project's name",
+            Project("Project's name",
                     body: "Hello I ~~am~~ a card with personality",
                     imageURL: "https://code.visualstudio.com/assets/docs/editor/integrated-terminal/integrated-terminal.png",
                     Tag("basic"))

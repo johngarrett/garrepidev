@@ -4,8 +4,8 @@ struct Sidebar: ComponentType {
     func render() -> HTMLComponent {
         HTMLComponent(.div, className: GClasses.sidebar.rawValue) {
             HTMLComponent(.div) {
-                SimpleHTMLComponent("Projects", attributes: ["href": Projects.relativeAddress], .a)
-                SimpleHTMLComponent("Blog", attributes: ["href": Blog.relativeAddress], .a)
+                SimpleHTMLComponent("Projects", attributes: ["href": ProjectsOverview.relativeAddress], .a)
+                SimpleHTMLComponent("Blog", attributes: ["href": BlogOverview.relativeAddress], .a)
                 SimpleHTMLComponent("About", attributes: ["href": About.relativeAddress], .a)
             }
             .padding(top: 20, left: 20, .percentage)

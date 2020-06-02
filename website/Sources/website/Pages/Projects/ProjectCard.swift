@@ -33,7 +33,7 @@ class ProjectCard: HTMLComponent {
     }
 }
 extension ProjectCard {
-    convenience init(from project: ProjectPreview) {
+    convenience init(from project: Project) {
         self.init(title: project.title, codeTag: project.tag, text: project.body, imgURL: project.imageURL ?? "")
     }
 }

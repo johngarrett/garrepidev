@@ -1,3 +1,3 @@
-Generator.render(Projects(), with: "garreπ's projects")
+Generator.render(ProjectsOverview(), with: "garreπ's projects")
 Generator.render(About(), with: "about garreπ")
-Generator.render(Blog(), with: "garreπ's blog")
+Generator.render(BlogOverview(), with: "garreπ's blog")

@@ -23,9 +23,10 @@ class PostCard: HTMLComponent {
                 .rawCSS("flex-direction", "row")
                 .rawCSS("align-items", "center")
                 .rawCSS("justify-content", "space-between")
+                
             }
             .wordWrap(.brk)
-            .maxWidth(80, .percentage)
+            .width(80, .percentage)
             .minHeight(200)
             .borderRadius(15)
             .backgroundColor(GColors.white)

@@ -13,7 +13,7 @@ class Root: HTMLComponent {
         <html lang="en">
             \(head.render())
             <body>
-                \(renderedComponents)
+            \(renderedComponents)
             </body>
         </html>
         """

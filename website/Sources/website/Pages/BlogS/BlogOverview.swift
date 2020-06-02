@@ -1,6 +1,6 @@
 import Foundation
 
-struct Blog: HTMLPage {
+struct BlogOverview: HTMLPage {
     private var posts: [Post]
     var sidebar: ComponentType = Sidebar()
     static var relativeAddress = "blog.html"
