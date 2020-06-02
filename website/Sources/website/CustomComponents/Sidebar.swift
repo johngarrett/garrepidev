@@ -7,6 +7,7 @@ struct Sidebar: ComponentType {
                 SimpleHTMLComponent("Projects", attributes: ["href": ProjectsOverview.relativeAddress], .a)
                 SimpleHTMLComponent("Blog", attributes: ["href": BlogOverview.relativeAddress], .a)
                 SimpleHTMLComponent("About", attributes: ["href": About.relativeAddress], .a)
+                SimpleHTMLComponent("Sample Post", attributes: ["href": PostDetailView.relativeAddress], .a)
             }
             .padding(top: 20, left: 20, .percentage)
             .rawCSS("margin", "0 auto")

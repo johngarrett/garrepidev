@@ -23,7 +23,6 @@ class PostCard: HTMLComponent {
                 .rawCSS("flex-direction", "row")
                 .rawCSS("align-items", "center")
                 .rawCSS("justify-content", "space-between")
-                
             }
             .wordWrap(.brk)
             .width(80, .percentage)

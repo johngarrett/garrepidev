@@ -3,10 +3,15 @@ import Foundation
 struct PostDetailView: HTMLPage {
     var sidebar: ComponentType = Sidebar()
     let post: Post
-    static var relativeAddress: String = "blog/post1"
+    static var relativeAddress: String = "testPost.html"
     
     func render() -> HTMLComponent {
-        Paragraph("Testing")
+        HTMLComponent(.div, className: "g_post_titlebar") {
+            HStack {
+                Header { "test" }
+            }
+            
+        }
     }
     
     init(with post: Post) {

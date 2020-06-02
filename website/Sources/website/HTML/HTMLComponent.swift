@@ -23,7 +23,6 @@ class HTMLComponent: HTMLElement {
     }
 }
 
-
 extension HTMLComponent {
     convenience init(_ tag: HTMLTag? = nil, className: String? = nil, attributes: [String: String]? = nil, @HTMLComponentBuilder _ component: () -> HTMLElement) {
         self.init(

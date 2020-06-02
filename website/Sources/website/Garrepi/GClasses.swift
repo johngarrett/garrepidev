@@ -6,7 +6,8 @@ enum GClasses: String, CustomStringConvertible {
     case blogCard = "g_blog_card"
     case blogCardsGrid = "g_blog_cards"
     case sidebar = "g_sidebar"
-    case horizontal =  "g_horizontal"
+    case horizontal = "g_horizontal"
+    case vertical = "g_vertical"
     var description: String {
         self.rawValue
     }
