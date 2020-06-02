@@ -5,6 +5,12 @@ import PackageDescription
 
 let package = Package(
     name: "garrepi.dev",
+    products: [
+        .library(
+            name: "garrepi.dev",
+            targets: ["garrepi.dev"]
+        )
+    ],
     dependencies: [
         .package(name: "Ink", url: "https://github.com/johnsundell/ink.git", from: "0.1.0")
     ],
