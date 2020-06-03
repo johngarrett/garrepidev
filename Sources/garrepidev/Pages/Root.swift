@@ -1,8 +1,8 @@
 import Foundation
 
-class Root: HTMLComponent {
-    let head: Head
-    override func render() -> String {
+public class Root: HTMLComponent {
+    public let head: Head
+    override public func render() -> String {
         var renderedComponents = ""
         for component in childComponents ?? [] {
             renderedComponents.append(component.render())
@@ -19,16 +19,16 @@ class Root: HTMLComponent {
         """
     }
     
-    init(_ head: Head, _ components: [HTMLComponent]?) {
+    public init(_ head: Head, _ components: [HTMLComponent]?) {
         self.head = head
         super.init(.head, components)
     }
 }
 
-class Head: HTMLComponent {
+public class Head: HTMLComponent {
     let title: String
     
-    override func render() -> String {
+    override public func render() -> String {
         """
         <head>
             <meta charset="utf-8">
@@ -48,13 +48,13 @@ class Head: HTMLComponent {
 }
 
 extension Root {
-    convenience init(title: String, @RootBuilder _ components: () -> [HTMLComponent]) {
+    convenience public init(title: String, @RootBuilder _ components: () -> [HTMLComponent]) {
         self.init(
             Head(title: title),
             components()
         )
     }
-    convenience init(title: String, @RootBuilder _ component: () -> HTMLComponent) {
+    convenience public init(title: String, @RootBuilder _ component: () -> HTMLComponent) {
         self.init(
             Head(title: title),
             [component()]
@@ -63,7 +63,7 @@ extension Root {
 }
 @_functionBuilder
 struct RootBuilder {
-    static func buildBlock(_ components: HTMLComponent...) -> HTMLComponent {
+    static public func buildBlock(_ components: HTMLComponent...) -> HTMLComponent {
         return HTMLComponent(.empty, components)
     }
 }

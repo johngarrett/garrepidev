@@ -1,7 +1,7 @@
 import Foundation
 
-struct Generator {
-    static func render(_ component: Displayable, to filename: String = "index.html") {
+public struct Generator {
+    public static func render(_ component: Displayable, to filename: String = "index.html") {
         renderStyleSheet()
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
 
@@ -18,7 +18,7 @@ struct Generator {
         }
     }
     
-    static func render(_ page: HTMLPage, with title: String) {
+    static public func render(_ page: HTMLPage, with title: String) {
         renderStyleSheet()
         let component = Root(title: title) {
             page.sidebar.render()

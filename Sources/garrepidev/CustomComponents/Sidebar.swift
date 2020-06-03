@@ -1,7 +1,7 @@
 import Foundation
 
-struct Sidebar: ComponentType {
-    func render() -> HTMLComponent {
+public struct Sidebar: ComponentType {
+    public func render() -> HTMLComponent {
         HTMLComponent(.div, className: GClasses.sidebar.rawValue) {
             HTMLComponent(.div) {
                 SimpleHTMLComponent("Projects", attributes: ["href": ProjectsOverview.relativeAddress], .a)

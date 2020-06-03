@@ -1,14 +1,14 @@
 import Foundation
 
-protocol Displayable {
+public protocol Displayable {
     func render() -> String
 }
 
-protocol ComponentType {
+public protocol ComponentType {
     func render() -> HTMLComponent
 }
 
-protocol HTMLPage: ComponentType {
+public protocol HTMLPage: ComponentType {
     var sidebar: ComponentType { get set }
     static var relativeAddress: String { get set }
 }

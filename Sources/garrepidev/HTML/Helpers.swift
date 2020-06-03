@@ -1,5 +1,5 @@
 import Foundation
-enum HTMLTag: String {
+public enum HTMLTag: String {
     case html
     case head
     case comment = "!--"

@@ -1,11 +1,11 @@
 import Foundation
 
-struct ProjectsOverview: HTMLPage {
+public struct ProjectsOverview: HTMLPage {
     private var projects: [Project]
-    var sidebar: ComponentType = Sidebar()
-    static var relativeAddress = "projects.html"
+    public var sidebar: ComponentType = Sidebar()
+    static public var relativeAddress = "projects.html"
     
-    func render() -> HTMLComponent {
+    public func render() -> HTMLComponent {
         HTMLComponent(.div, className: GClasses.projectCardsGrid.rawValue) {
             projects.map { ProjectCard(from: $0) }
         }
@@ -15,7 +15,7 @@ struct ProjectsOverview: HTMLPage {
         .rawCSS("grid-gap", "1rem")
     }
     
-    init() {
+    public init() {
         self.projects = [
             Project("Project's name",
                     body: "Hello I am a *card* `with` personality",

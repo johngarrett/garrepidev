@@ -1,7 +1,7 @@
 import Foundation
 
-class Image: HTMLComponent {
-    init(url: String) {
+public class Image: HTMLComponent {
+    public init(url: String) {
         super.init(.img, attributes: ["src": url])
     }
 }

@@ -1,11 +1,11 @@
 import Foundation
 
-struct PostDetailView: HTMLPage {
-    var sidebar: ComponentType = Sidebar()
+public struct PostDetailView: HTMLPage {
+    public var sidebar: ComponentType = Sidebar()
     let post: Post
-    static var relativeAddress: String = "testPost.html"
+    static public var relativeAddress: String = "testPost.html"
     
-    func render() -> HTMLComponent {
+    public func render() -> HTMLComponent {
         HTMLComponent(.div, className: "g_post_titlebar") {
             HStack {
                 Header { "test" }
@@ -14,7 +14,7 @@ struct PostDetailView: HTMLPage {
         }
     }
     
-    init(with post: Post) {
+    public init(with post: Post) {
         self.post = post
     }
 }

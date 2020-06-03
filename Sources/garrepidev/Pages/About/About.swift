@@ -1,8 +1,8 @@
 import Foundation
-struct About: HTMLPage {
-    var sidebar: ComponentType = Sidebar()
-    static var relativeAddress = "about.html"
-    func render() -> HTMLComponent {
+public struct About: HTMLPage {
+    public var sidebar: ComponentType = Sidebar()
+    static public var relativeAddress = "about.html"
+    public func render() -> HTMLComponent {
         HTMLComponent {
             HTMLComponent(.header1) { "About" }
                 .color(GColors.black)

@@ -1,43 +1,43 @@
 import Foundation
 
-class SimpleHTMLComponent: HTMLComponent {
-    let text: String!
-    init(_ text: String, attributes: [String: String] = ["":""], _ tag: HTMLTag) {
+public class SimpleHTMLComponent: HTMLComponent {
+    public let text: String!
+    public init(_ text: String, attributes: [String: String] = ["":""], _ tag: HTMLTag) {
         self.text = text
         super.init(tag, attributes: attributes)
     }
     
-    override func render() -> String {
+    override public func render() -> String {
         self.tag.opening(attributes) +
         self.text +
         self.tag.closing()
     }
 }
 
-class Paragraph: SimpleHTMLComponent {
-    init(attributes: [String:String] = ["class": "g_body_paragraph"], _ text: String) {
+public class Paragraph: SimpleHTMLComponent {
+    public init(attributes: [String:String] = ["class": "g_body_paragraph"], _ text: String) {
         super.init(text, attributes: attributes, .paragraph)
     }
 }
 
-class Comment: SimpleHTMLComponent {
-    init(_ text: String) {
+public class Comment: SimpleHTMLComponent {
+    public init(_ text: String) {
         super.init(text, .comment)
     }
 }
 
-class RawText: HTMLElement {
-    var tag: HTMLTag = .empty
-    var className: String = ""
-    var attributes: [String : String] = ["":""]
-    var childComponents: [HTMLElement]? = nil
-    let rawString: String
+public class RawText: HTMLElement {
+    public var tag: HTMLTag = .empty
+    public var className: String = ""
+    public var attributes: [String : String] = ["":""]
+    public var childComponents: [HTMLElement]? = nil
+    public let rawString: String
     
-    func render() -> String {
+    public func render() -> String {
         self.rawString
     }
     
-    init(_ rawString: String) {
+    public init(_ rawString: String) {
         self.rawString = rawString
     }
 }

@@ -1,25 +1,25 @@
 import Foundation
 
-enum TextAlign: String {
+public enum TextAlign: String {
     case center
     case left
 }
-enum ObjectFit: String {
+public enum ObjectFit: String {
     case cover
 }
 
-enum DisplayType: String {
+public enum DisplayType: String {
     case grid
     case block
 }
-enum TextDecoration: String {
+public enum TextDecoration: String {
     case none
 }
 
-enum WordWrap: String {
+public enum WordWrap: String {
     case brk = "break-word"
 }
 
-enum WhiteSpace: String {
+public enum WhiteSpace: String {
     case nowrap
 }

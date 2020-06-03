@@ -1,6 +1,6 @@
 import Foundation
 
-struct Project {
+public struct Project {
     let title: String
     let body: String
     let imageURL: String?

@@ -1,11 +1,11 @@
 import Foundation
 
-struct BlogOverview: HTMLPage {
+public struct BlogOverview: HTMLPage {
     private var posts: [Post]
-    var sidebar: ComponentType = Sidebar()
-    static var relativeAddress = "blog.html"
+    public var sidebar: ComponentType = Sidebar()
+    static public var relativeAddress = "blog.html"
     
-    func render() -> HTMLComponent {
+    public func render() -> HTMLComponent {
         HTMLComponent(.div, className: GClasses.blogCardsGrid.rawValue) {
             posts.map { PostCard(from: $0) }
         }
@@ -15,7 +15,7 @@ struct BlogOverview: HTMLPage {
        .rawCSS("grid-gap", "1rem")
     }
     
-    init() {
+    public init() {
         self.posts = [
             Post("How to game on a laptop",
                  abstract:

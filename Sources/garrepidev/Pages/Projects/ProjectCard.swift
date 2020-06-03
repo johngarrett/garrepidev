@@ -1,7 +1,7 @@
 import Foundation
 
-class ProjectCard: HTMLComponent {
-    init(title: String, codeTag: Tag, text: String, imgURL: String) {
+public class ProjectCard: HTMLComponent {
+    public init(title: String, codeTag: Tag, text: String, imgURL: String) {
         let card =
             HTMLComponent(.div, className: GClasses.projectCard.rawValue) {
                 HTMLComponent(.div, className: GClasses.horizontal.rawValue) {
@@ -38,8 +38,8 @@ extension ProjectCard {
     }
 }
 
-class Tag: HTMLComponent {
-    init(_ language: String) {
+public class Tag: HTMLComponent {
+    public init(_ language: String) {
         let tag =
             HTMLComponent(.div) {
                 HTMLComponent(.paragraph) { language }
@@ -55,7 +55,7 @@ class Tag: HTMLComponent {
         super.init(.empty, [tag])
     }
     
-    init(topic: String) {
+    public init(topic: String) {
         let tag =
             HTMLComponent(.div) {
                 HTMLComponent(.paragraph) { topic }

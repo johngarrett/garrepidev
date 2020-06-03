@@ -1,6 +1,6 @@
 import Foundation
 
-struct GColors {
+public struct GColors {
     static let white = CSSColor("#FFFFFF")
     static let black = CSSColor("#000000")
     static let gray = CSSColor("#CACACA")

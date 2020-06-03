@@ -1,6 +1,6 @@
 import Foundation
 
-enum GClasses: String, CustomStringConvertible {
+public enum GClasses: String, CustomStringConvertible {
     case projectCard = "g_project_card"
     case projectCardsGrid = "g_project_cards"
     case blogCard = "g_blog_card"
@@ -8,7 +8,7 @@ enum GClasses: String, CustomStringConvertible {
     case sidebar = "g_sidebar"
     case horizontal = "g_horizontal"
     case vertical = "g_vertical"
-    var description: String {
+    public var description: String {
         self.rawValue
     }
 }

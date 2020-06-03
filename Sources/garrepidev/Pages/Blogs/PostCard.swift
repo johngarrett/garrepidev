@@ -1,6 +1,6 @@
 import Foundation
 
-class PostCard: HTMLComponent {
+public class PostCard: HTMLComponent {
     init(_ title: String, abstract: String, imgURL: String, _ tags: [Tag]) {
         let card =
             HTMLComponent(.div, className: GClasses.blogCard.rawValue) {
