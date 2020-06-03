@@ -41,7 +41,7 @@ public class Head: HTMLComponent {
         """
     }
     
-    init(title: String) {
+    public init(title: String) {
         self.title = title
         super.init(.head)
     }
