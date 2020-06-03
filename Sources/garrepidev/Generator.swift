@@ -32,7 +32,7 @@ public struct Generator {
             .rawCSS("position", "absolute")
             .rawCSS("float", "left")
         }
-        render(component, to: type(of: page).relativeAddress)
+        render(component, to: type(of: page).absoluteAddress)
     }
     
     static private func renderStyleSheet(to filename: String = "styles2.css") {

@@ -4,10 +4,10 @@ public struct Sidebar: ComponentType {
     public func render() -> HTMLComponent {
         HTMLComponent(.div, className: GClasses.sidebar.rawValue) {
             HTMLComponent(.div) {
-                SimpleHTMLComponent("Projects", attributes: ["href": ProjectsOverview.relativeAddress], .a)
-                SimpleHTMLComponent("Blog", attributes: ["href": BlogOverview.relativeAddress], .a)
-                SimpleHTMLComponent("About", attributes: ["href": About.relativeAddress], .a)
-                SimpleHTMLComponent("Sample Post", attributes: ["href": PostDetailView.relativeAddress], .a)
+                SimpleHTMLComponent("Projects", attributes: ["href": ProjectsOverview.absoluteAddress], .a)
+                SimpleHTMLComponent("Blog", attributes: ["href": BlogOverview.absoluteAddress], .a)
+                SimpleHTMLComponent("About", attributes: ["href": About.absoluteAddress], .a)
+                SimpleHTMLComponent("Sample Post", attributes: ["href": PostDetailView.absoluteAddress], .a)
             }
             .padding(top: 20, left: 20, .percentage)
             .rawCSS("margin", "0 auto")

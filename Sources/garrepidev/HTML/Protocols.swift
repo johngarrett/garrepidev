@@ -10,5 +10,5 @@ public protocol ComponentType {
 
 public protocol HTMLPage: ComponentType {
     var sidebar: ComponentType { get set }
-    static var relativeAddress: String { get set }
+    static var absoluteAddress: String { get set }
 }

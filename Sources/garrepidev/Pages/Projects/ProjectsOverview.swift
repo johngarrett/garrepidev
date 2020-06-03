@@ -3,7 +3,7 @@ import Foundation
 public struct ProjectsOverview: HTMLPage {
     private var projects: [Project]
     public var sidebar: ComponentType = Sidebar()
-    static public var relativeAddress = "projects"
+    static public var absoluteAddress = "/projects"
     
     public func render() -> HTMLComponent {
         HTMLComponent(.div, className: GClasses.projectCardsGrid.rawValue) {
