@@ -1,7 +1,7 @@
 import Foundation
 public struct About: HTMLPage {
     public var sidebar: ComponentType = Sidebar()
-    static public var relativeAddress = "about.html"
+    static public var relativeAddress = "about"
     public func render() -> HTMLComponent {
         HTMLComponent {
             HTMLComponent(.header1) { "About" }
