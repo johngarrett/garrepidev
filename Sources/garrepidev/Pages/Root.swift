@@ -62,7 +62,7 @@ extension Root {
     }
 }
 @_functionBuilder
-struct RootBuilder {
+public struct RootBuilder {
     static public func buildBlock(_ components: HTMLComponent...) -> HTMLComponent {
         return HTMLComponent(.empty, components)
     }
