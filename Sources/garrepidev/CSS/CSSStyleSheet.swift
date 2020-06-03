@@ -1,6 +1,6 @@
 import Foundation
 
-struct CSSStyleSheet {
+public struct CSSStyleSheet {
     static public var stylesheet: [String: [String]] = ["": [""]]
     static public func add(_ linearKV: String, for className: String) {
         stylesheet[className] = stylesheet[className] ?? [""]
