@@ -11,7 +11,7 @@ public struct Sidebar: ComponentType {
             .padding(top: 20, left: 20, .percentage)
             .rawCSS("margin", "0 auto")
             .rawCSS("text-decoration", "none")
-            .color(CSSColor("#ffffff"))
+            .color(GColors.black)
             .display(.block)
             .textAlign(.left)
         }
@@ -19,13 +19,13 @@ public struct Sidebar: ComponentType {
         .height(100, .percentage)
         .width(15, .percentage)
         .maxWidth(175)
-        .backgroundColor(GColors.gray)
-        .shadow(x: 5, y: 2, spread: 5, blur: 11, color: GColors.sidebarShadow)
+        .backgroundColor(GColors.white)
         .position(top: 0, left: 0)
         .zIndex(1)
         .rawCSS("float", "left")
         .rawCSS("position", "fixed")
         .rawCSS("overflow-x", "hidden")
+        .rawCSS("border-right", "3px solid #ffffff")
     }
     
     public func change(to page: GPage) {
