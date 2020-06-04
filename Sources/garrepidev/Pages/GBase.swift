@@ -14,7 +14,7 @@ public class GBase: HTMLComponent {
         <html lang="en">
             \(head.render())
             <body>
-            \(body.render())
+            \(body.render().render())
             </body>
         </html>
         """
