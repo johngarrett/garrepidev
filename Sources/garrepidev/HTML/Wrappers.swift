@@ -24,6 +24,12 @@ public class Comment: SimpleHTMLComponent {
     }
 }
 
+public class Image: HTMLComponent {
+    public init(url: String) {
+        super.init(.img, attributes: ["src": url])
+    }
+}
+
 public class Link: SimpleHTMLComponent {
     public init( _ text: String, cls: String = "", href: String) {
         super.init(text, attributes: ["href": href], cls: cls, .a)

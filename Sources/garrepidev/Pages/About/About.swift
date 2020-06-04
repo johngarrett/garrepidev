@@ -16,8 +16,7 @@ public struct About: HTMLPage {
 
                     This website was written 100% in swift
                     """
-                )
-            }
+            )
         }
-    public init() { }
+    }
 }
