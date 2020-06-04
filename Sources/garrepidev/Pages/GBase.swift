@@ -50,6 +50,8 @@ public class GBase: HTMLComponent {
                 return blogOverview
             case .ProjectsOverview:
                 return projectsOverview
+            case .FourOFour:
+                return FourOFour()
             }
         }()
         
