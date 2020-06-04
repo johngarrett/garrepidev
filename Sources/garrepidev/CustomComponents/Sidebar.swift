@@ -4,10 +4,9 @@ public struct Sidebar: ComponentType {
     public func render() -> HTMLComponent {
         HTMLComponent(.div, className: GClasses.sidebar.rawValue) {
             HTMLComponent(.div) {
-                SimpleHTMLComponent("Projects", attributes: ["href": ProjectsOverview.absoluteAddress], .a)
-                SimpleHTMLComponent("Blog", attributes: ["href": BlogOverview.absoluteAddress], .a)
-                SimpleHTMLComponent("About", attributes: ["href": About.absoluteAddress], .a)
-                SimpleHTMLComponent("Sample Post", attributes: ["href": PostDetailView.absoluteAddress], .a)
+                Link("Projects", href: ProjectsOverview.absoluteAddress)
+                Link("Blog", href: BlogOverview.absoluteAddress)
+                Link("About", href: About.absoluteAddress)
             }
             .padding(top: 20, left: 20, .percentage)
             .rawCSS("margin", "0 auto")
@@ -27,6 +26,10 @@ public struct Sidebar: ComponentType {
         .rawCSS("float", "left")
         .rawCSS("position", "fixed")
         .rawCSS("overflow-x", "hidden")
+    }
+    
+    public func change(to page: GPage) {
+        print("switch to \(page)")
     }
     private func makeLink(_ title: String, href: String) -> HTMLComponent {
         // TODO: make these extensions work on simpleHTMLComponenet... or get rid of it

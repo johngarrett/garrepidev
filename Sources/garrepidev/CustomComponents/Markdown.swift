@@ -7,7 +7,7 @@ public class Markdown: SimpleHTMLComponent {
         parser.html(from: self.text)
     }
     
-    public init(attributes: [String:String] = ["class": "g_markdown"], _ text: String) {
-        super.init(text, attributes: attributes, .div)
+    public init(cls: String = "g_markdown", _ text: String) {
+        super.init(text, cls: cls, .div)
     }
 }

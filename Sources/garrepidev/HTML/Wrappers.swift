@@ -2,27 +2,31 @@ import Foundation
 
 public class SimpleHTMLComponent: HTMLComponent {
     public let text: String!
-    public init(_ text: String, attributes: [String: String] = ["":""], _ tag: HTMLTag) {
+    public init(_ text: String, attributes: [String:String] = ["":""], cls: String = "", _ tag: HTMLTag) {
         self.text = text
-        super.init(tag, attributes: attributes)
+        super.init(tag, className: cls, attributes: attributes)
     }
     
     override public func render() -> String {
-        self.tag.opening(attributes) +
-        self.text +
-        self.tag.closing()
+        self.tag.opening(attributes) + self.text + self.tag.closing()
     }
 }
 
 public class Paragraph: SimpleHTMLComponent {
-    public init(attributes: [String:String] = ["class": "g_body_paragraph"], _ text: String) {
-        super.init(text, attributes: attributes, .paragraph)
+    public init(cls: String = "", _ text: String) {
+        super.init(text, cls: cls, .paragraph)
     }
 }
 
 public class Comment: SimpleHTMLComponent {
     public init(_ text: String) {
         super.init(text, .comment)
+    }
+}
+
+public class Link: SimpleHTMLComponent {
+    public init( _ text: String, cls: String = "", href: String) {
+        super.init(text, attributes: ["href": href], cls: cls, .a)
     }
 }
 

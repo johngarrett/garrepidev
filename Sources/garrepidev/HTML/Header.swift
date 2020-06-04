@@ -2,7 +2,7 @@ import Foundation
 
 public class Header: SimpleHTMLComponent {
     public init(_ style: HTMLTag = .header1, text: String, cls: String = "", attributes: [String: String] = ["":""]) {
-        super.init(text, attributes: attributes, style);
+        super.init(text, cls: cls, style)
         self.attributes["class"] = cls
     }
 }

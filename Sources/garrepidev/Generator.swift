@@ -5,7 +5,7 @@ public struct Generator {
         renderStyleSheet()
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
 
-            let fileURL = dir.appendingPathComponent("/temp/\(filename)")
+            let fileURL = dir.appendingPathComponent("/temp/\(filename).html")
 
             do {
                 try component.render().write(to: fileURL, atomically: false, encoding: .utf8)
