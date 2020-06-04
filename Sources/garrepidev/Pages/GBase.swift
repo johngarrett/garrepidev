@@ -9,13 +9,24 @@ public class GBase: HTMLComponent {
     public let projectsOverview: ProjectsOverview
     
     override public func render() -> String {
-        """
+       let view = HTMLComponent {
+        sidebar.render()
+        HTMLComponent(.div, className: "g_main") {
+            HTMLComponent(.div) {
+                body.render()
+            }
+        }
+        .margin(left: 15, .percentage)
+        .padding(top: 5, right: 20, left: 20)
+        .rawCSS("position", "absolute")
+        .rawCSS("float", "left")
+        }
+        return """
         <!DOCTYPE html>
         <html lang="en">
             \(head.render())
             <body>
-            \(sidebar.render().render())
-            \(body.render().render())
+            \(view.render())
             </body>
         </html>
         """
