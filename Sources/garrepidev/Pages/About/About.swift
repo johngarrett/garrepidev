@@ -19,4 +19,5 @@ public struct About: HTMLPage {
             )
         }
     }
+    public init() {}
 }
