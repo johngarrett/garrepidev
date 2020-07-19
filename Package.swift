@@ -11,13 +11,11 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(name: "Ink", url: "https://github.com/johnsundell/ink.git", from: "0.1.0")
+        .package(url: "https://github.com/johngarrett/HyperSwift", .branch("master"))
     ],
     targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "garrepidev",
-            dependencies: ["Ink"]),
+            dependencies: ["HyperSwift"]),
     ]
 )
