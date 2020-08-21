@@ -11,11 +11,12 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/johngarrett/HyperSwift", .branch("master"))
+        .package(url: "https://github.com/johngarrett/HyperSwift", .branch("master")),
+        .package(name: "Ink", url: "https://github.com/johnsundell/ink.git", from: "0.1.0")
     ],
     targets: [
         .target(
             name: "garrepidev",
-            dependencies: ["HyperSwift"]),
+            dependencies: ["HyperSwift", "Ink"]),
     ]
 )
