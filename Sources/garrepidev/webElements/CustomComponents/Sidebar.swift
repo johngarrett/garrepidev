@@ -2,6 +2,7 @@ import Foundation
 import HyperSwift
 
 public struct Sidebar: ComponentType {
+    public init() { } 
     public func render() -> HTMLComponent {
         VStack("g_sidebar", justify: .flexStart) {
             VStack("g_sidebar_links", justify: .spaceAround){
