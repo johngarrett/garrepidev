@@ -2,6 +2,7 @@ import Foundation
 import HyperSwift
 
 public struct FourOFour: HTMLPage {
+    public init() { }
     public static var absoluteAddress: String = "/404"
     
     public func render() -> HTMLComponent {

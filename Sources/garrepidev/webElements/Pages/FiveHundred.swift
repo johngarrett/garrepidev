@@ -2,6 +2,7 @@ import Foundation
 import HyperSwift
 
 public struct FiveHundred: HTMLPage {
+    public init() {}
     public static var absoluteAddress: String = "/500"
     
     public func render() -> HTMLComponent {
