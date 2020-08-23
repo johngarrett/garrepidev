@@ -33,8 +33,8 @@ public class Head: HTMLComponent {
         """
         <head>
             <meta charset="utf-8">
-            <link rel="stylesheet" href="/styles.css">
-            <link rel="stylesheet" href="/styles2.css">
+            <link rel="stylesheet" href="css/styles.css">
+            <link rel="stylesheet" href="css/styles2.css">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" type="text/css" href="https://sf.abarba.me/font.css">
           <title>\(title)</title>
