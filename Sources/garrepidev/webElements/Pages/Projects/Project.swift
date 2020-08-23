@@ -18,19 +18,18 @@ public struct Project {
         self.href = "projects/\(href)"
     }
     
-//    public init?(from name: String) {
-//        let thisFile = File("~/dev/g-server/Sources/g-server/projects/\(name).md")
-//        guard let rawPost = try? thisFile.readString() else {
-//            return nil
-//        }
-//        let result = MarkdownParser().parse(rawPost)
-//
-//        guard let title = result.metadata["title"],
-//            let abstract = result.metadata["abstract"],
-//            let tags = result.metadata["tags"] else {
-//                return nil
-//           }
-//        let tempTags = tags.split(separator: ",").map { Tag(String($0)) } // todo: split strings up in tag
-//        self.init(title, abstract: abstract, imageURL: result.metadata["image_url"], readme: result.html, tempTags, href: name)
-//    }
+    public init?(from url: URL) {
+        guard let rawPost = try? String(contentsOfFile: url.path) else {
+            return nil
+        }
+        let result = MarkdownParser().parse(rawPost)
+        
+        guard let title = result.metadata["title"],
+            let abstract = result.metadata["abstract"],
+            let tags = result.metadata["tags"] else {
+                return nil
+        }
+        let tempTags = tags.split(separator: ",").map { Tag(String($0)) } // todo: split strings up in tag
+        self.init(title, abstract: abstract, imageURL: result.metadata["image_url"], readme: result.html, tempTags, href: title)
+    }
 }
