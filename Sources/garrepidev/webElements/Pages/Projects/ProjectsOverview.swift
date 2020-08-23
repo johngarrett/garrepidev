@@ -5,6 +5,10 @@ public struct ProjectsOverview: HTMLPage {
     private var projects: [Project?]
     static public var absoluteAddress = "/projects"
     
+    public init(_ projects: [Project]? = nil) {
+        self.projects = projects ?? []
+    }
+    
     public func render() -> HTMLComponent {
         Div(GClasses.projectCardsGrid.rawValue) {
             projects.compactMap { $0 }.map { ProjectCard(from: $0) }
