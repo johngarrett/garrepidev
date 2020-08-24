@@ -28,7 +28,7 @@ public class Root: HTMLComponent {
 
 public class Head: HTMLComponent {
     let title: String
-    let stylesheets: [String]
+    let stylesheets: [String] 
     
     override public func render() -> String {
         """
