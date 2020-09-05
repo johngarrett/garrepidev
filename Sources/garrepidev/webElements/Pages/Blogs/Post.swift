@@ -20,10 +20,11 @@ public struct Post {
         self.href = "blog/\(href)"
     }
     
-    public init?(from url: URL) {
+    public init?(from url: URL, href: String) {
         guard let rawPost = try? String(contentsOfFile: url.path) else {
             return nil
         }
+        
         let result = MarkdownParser().parse(rawPost)
 
         guard let heading = result.metadata["title"],
@@ -33,6 +34,13 @@ public struct Post {
                 return nil
         }
         let tempTags = tags.split(separator: ",").map { Tag(String($0)) } // todo: split strings up in tag
-        self.init(heading, date: date, abstract: abstract, imageURL: result.metadata["image_url"], body: result.html, tempTags, href: heading)
+        self.init(
+            heading,
+            date: date,
+            abstract: abstract,
+            imageURL: result.metadata["image_url"],
+            body: result.html, tempTags,
+            href: href
+        )
     }
 }

@@ -18,7 +18,7 @@ public struct Project {
         self.href = "projects/\(href)"
     }
     
-    public init?(from url: URL) {
+    public init?(from url: URL, href: String) {
         guard let rawPost = try? String(contentsOfFile: url.path) else {
             return nil
         }
@@ -30,6 +30,13 @@ public struct Project {
                 return nil
         }
         let tempTags = tags.split(separator: ",").map { Tag(String($0)) } // todo: split strings up in tag
-        self.init(title, abstract: abstract, imageURL: result.metadata["image_url"], readme: result.html, tempTags, href: title)
+        self.init(
+            title,
+            abstract: abstract,
+            imageURL: result.metadata["image_url"],
+            readme: result.html,
+            tempTags,
+            href: href
+        )
     }
 }
