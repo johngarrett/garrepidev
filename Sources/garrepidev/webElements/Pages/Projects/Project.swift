@@ -2,14 +2,14 @@ import Foundation
 import Ink
 
 public struct Project {
-    let title: String
-    let abstract: String
-    let imageURL: String?
-    let tags: [Tag]
-    let href: String
-    let readme: String
+    public let title: String
+    public let abstract: String
+    public let imageURL: String?
+    public let tags: [Tag]
+    public let href: String
+    public let readme: String
 
-    init(_ title: String, abstract: String, imageURL: String? = nil, readme: String, _ tags: [Tag], href: String) {
+    public init(_ title: String, abstract: String, imageURL: String? = nil, readme: String, _ tags: [Tag], href: String) {
         self.title = title
         self.abstract = abstract
         self.imageURL = imageURL
