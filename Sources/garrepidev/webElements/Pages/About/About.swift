@@ -9,7 +9,7 @@ public struct About: HTMLPage {
                 .color(GColors.black)
                 .font(weight: "bold", size: 45, family: "SF Mono")
 
-            Markdown(
+            Markdown(cls: "about_text",
                     """
                     Welcome to my website -- this is where I host all my projects and blogs.
 
@@ -27,7 +27,6 @@ public struct About: HTMLPage {
         }
         .backgroundColor(GColors.white)
         .textAlign(.center)
-        .margin(5, .percent)
         .shadow(x: 20, y: 30, color: GColors.cardShadow)
         .rawCSS("border", "1px solid #000000")
     }

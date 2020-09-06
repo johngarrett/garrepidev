@@ -2,7 +2,7 @@ import Foundation
 import HyperSwift
 
 public struct BlogDetail: HTMLPage {
-    let post: Post
+    public let post: Post
     static public var absoluteAddress: String = "testPost.html"
     
     public func render() -> HTMLComponent {
