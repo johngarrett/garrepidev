@@ -9,7 +9,7 @@ public struct About: HTMLPage {
                 .color(GColors.black)
                 .font(weight: "bold", size: 45, family: "SF Mono")
 
-            Paragraph(
+            Markdown(
                     """
                     Welcome to my website -- this is where I host all my projects and blogs.
 
