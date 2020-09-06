@@ -15,12 +15,15 @@ public struct About: HTMLPage {
 
                     This website was written 100% in swift.
 
-                    Check out the source code:
-                    - [garrepidev](https://github.com/johngarrett/garrepidev)
+                    Check out the source code:  
+
+                    - [garrepidev](https://github.com/johngarrett/garrepidev)  
                         - the source code for all the pages here
-                    - [HyperSwift](https://github.com/johngarrett/HyperSwift)
+
+                    - [HyperSwift](https://github.com/johngarrett/HyperSwift)  
                         - the DSL that powers this website
-                    - [johngarrett.github.io](https://github.com/johngarrett/johngarrett.github.io)
+
+                    - [johngarrett.github.io](https://github.com/johngarrett/johngarrett.github.io)  
                         - the static github pages you're looking at now
                     """
             ).padding(right: 5, left: 5, .percent)
