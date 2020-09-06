@@ -11,10 +11,17 @@ public struct About: HTMLPage {
 
             Paragraph(
                     """
-                    Welcome to my website. Here is where I host all my projects and blogs.
-                    See below for more information.
+                    Welcome to my website -- this is where I host all my projects and blogs.
 
-                    This website was written 100% in swift
+                    This website was written 100% in swift.
+
+                    Check out the source code:
+                    - [garrepidev](https://github.com/johngarrett/garrepidev)
+                        - the source code for all the pages here
+                    - [HyperSwift](https://github.com/johngarrett/HyperSwift)
+                        - the DSL that powers this website
+                    - [johngarrett.github.io](https://github.com/johngarrett/johngarrett.github.io)
+                        - the static github pages you're looking at now
                     """
             ).padding(right: 10, left: 10, .percent)
         }
