@@ -23,12 +23,11 @@ public struct About: HTMLPage {
                     - [johngarrett.github.io](https://github.com/johngarrett/johngarrett.github.io)
                         - the static github pages you're looking at now
                     """
-            ).padding(right: 10, left: 10, .percent)
+            ).padding(right: 5, left: 5, .percent)
         }
         .backgroundColor(GColors.white)
         .textAlign(.center)
         .margin(5, .percent)
-        .width(70, .percent)
         .shadow(x: 20, y: 30, color: GColors.cardShadow)
         .rawCSS("border", "1px solid #000000")
     }

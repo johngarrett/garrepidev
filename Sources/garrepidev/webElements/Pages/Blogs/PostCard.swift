@@ -2,14 +2,15 @@ import Foundation
 import HyperSwift
 
 public class PostCard: HTMLComponent {
-    init(_ title: String, abstract: String, imgURL: String, _ tags: [Tag], href: String) {
+    init(_ post: Post) {
+        let wordCount = post.body.components(separatedBy: .whitespacesAndNewlines).filter { !$0.isEmpty }.count
         let card =
-            Div(GClasses.blogCard.rawValue, attributes: ["onclick": "location.href='\(href)';"]) {
+            Div(GClasses.blogCard.rawValue, attributes: ["onclick": "location.href='\(post.href)';"]) {
                 HStack("g_post_top", justify: .spaceBetween, align: .center) {
-                    HTMLComponent(.header1) { title }
+                    HTMLComponent(.header1) { post.title }
                         .font(weight: "bold", size: 25, family: "SF Mono")
                         .width(70, .percent)
-                    Paragraph("20th March, 2020<br />5,821 words")
+                    Paragraph("\(post.date)<br />\(wordCount) words")
                         .font(weight: "regular", size: 13, family: "SF Mono")
                         .width(20, .percent)
                         .color(GColors.lightGray)
@@ -19,11 +20,11 @@ public class PostCard: HTMLComponent {
                 
                 HStack("g_post_bottom", justify: .spaceBetween, align: .center) {
                     Div {
-                        Markdown(abstract)
-                        HStack(justify: .center) { tags }
+                        Markdown(post.abstract)
+                        HStack(justify: .center) { post.tags }
                     }
                     .width(80, .percent)
-                    Image(url: imgURL)
+                    Image(url: post.imageURL ?? "")
                         .margin(right: 5, left: 5, .percent)
                         .width(20, .percent)
                         .objectFit(.cover)
@@ -38,10 +39,5 @@ public class PostCard: HTMLComponent {
                 .rawCSS("border", "1px solid #000000")
         
         super.init(.empty, [card])
-    }
-}
-extension PostCard {
-    convenience init(from post: Post) {
-        self.init(post.title, abstract: post.abstract, imgURL: post.imageURL ?? "", post.tags, href: post.href)
     }
 }

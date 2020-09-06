@@ -7,7 +7,7 @@ public struct BlogDetail: HTMLPage {
     
     public func render() -> HTMLComponent {
         VStack {
-            PostCard(from: post)
+            PostCard(post)
             TextCard(with: post.body)
         }
     }
