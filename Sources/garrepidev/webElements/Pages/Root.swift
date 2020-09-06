@@ -9,7 +9,8 @@ public class Root: HTMLComponent {
             renderedComponents.append(component.render())
         }
         
-        return """
+        return 
+        """
         <!DOCTYPE html>
         <html lang="en">
             \(head.render())

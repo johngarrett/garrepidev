@@ -2,8 +2,8 @@ import Foundation
 import HyperSwift
 
 public struct FiveHundred: HTMLPage {
-    public init() {}
     public static var absoluteAddress: String = "/500"
+    public init() {}
     
     public func render() -> HTMLComponent {
         VStack("g_505", justify: .center, align: .center) {
@@ -12,7 +12,7 @@ public struct FiveHundred: HTMLPage {
                     .width(100)
                     .height(100)
                 Header(.header3) { "HTTP 500" }
-                .font(weight: "bold", size: 40, family: "SF Mono")
+                    .font(weight: "bold", size: 40, family: "SF Mono")
             }
             
             Paragraph(
