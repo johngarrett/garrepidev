@@ -11,15 +11,6 @@
         }
       },
       {
-        "package": "HyperView",
-        "repositoryURL": "https://github.com/johngarrett/HyperView",
-        "state": {
-          "branch": "master",
-          "revision": "e90b26cdf7af7b776e1c417e312de52e02f2c7dc",
-          "version": null
-        }
-      },
-      {
         "package": "Ink",
         "repositoryURL": "https://github.com/johnsundell/ink.git",
         "state": {
@@ -30,10 +21,10 @@
       },
       {
         "package": "COpenSSL",
-        "repositoryURL": "https://github.com/PerfectlySoft/Perfect-COpenSSL-Linux.git",
+        "repositoryURL": "https://github.com/PerfectlySoft/Perfect-COpenSSL.git",
         "state": {
           "branch": null,
-          "revision": "ebf8dc885a0f86b93632b362433d7db554d4f7db",
+          "revision": "ce3113e159b8c6d8565e5d8db2672b572c81aea9",
           "version": "4.0.2"
         }
       },
@@ -71,15 +62,6 @@
           "branch": null,
           "revision": "4843cd54762d59b7e70841663ae561b279b80946",
           "version": "3.0.23"
-        }
-      },
-      {
-        "package": "LinuxBridge",
-        "repositoryURL": "https://github.com/PerfectlySoft/Perfect-LinuxBridge.git",
-        "state": {
-          "branch": null,
-          "revision": "d6e64c48e6b06b6f1ab7ab9338280447baa8ca5c",
-          "version": "3.1.0"
         }
       },
       {

@@ -10,7 +10,10 @@ public struct Post {
     public let tags: [Tag]
     public let href: String
     
-    public init(_ title: String, date: String, abstract: String, imageURL: String? = nil, body: String, _ tags: [Tag], href: String) {
+    public init(
+        _ title: String, date: String, abstract: String,
+        imageURL: String? = nil, body: String, _ tags: [Tag], href: String
+    ) {
         self.title = title
         self.date = date
         self.abstract = abstract
