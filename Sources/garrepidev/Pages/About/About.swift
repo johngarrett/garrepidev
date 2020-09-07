@@ -29,7 +29,7 @@ public struct About: HTMLPage {
                     [@garrepi](https://twitter.com/garrepi)
                     """
             )
-            .font(weight: "normal", size: 16, family: "CrimsonText")
+            .font(weight: "normal", size: 16, family: "SF Mono")
             .padding(10, .px)
         }
         .backgroundColor(GColors.white)

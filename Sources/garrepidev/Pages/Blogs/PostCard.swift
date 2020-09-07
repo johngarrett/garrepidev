@@ -20,7 +20,10 @@ public class PostCard: HTMLComponent {
                 
                 HStack("g_post_bottom", justify: .spaceBetween, align: .center) {
                     Div {
-                        Markdown(post.abstract)
+                        Markdown(cls: "g_post_abstract", post.abstract)
+                            .textAlign(.left)
+                            .font(weight: "regular", size: 13, family: "SF Mono")
+                            .color(GColors.lightGray)
                         HStack(justify: .center) { post.tags }
                     }
                     .width(80, .percent)
