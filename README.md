@@ -1,6 +1,7 @@
 ## garrepi.dev
 Here is the source code for [garrepi.dev](https://www.garrepi.dev). 
-The source code for the server is [here](https://github.com/johngarrett/g-server/)
+The source code for the server can be found under `/Sources/garrepi.server`
+The source code for the static site generator can be found under `/Sources/garrepi.static`
 #### screenshots
 ![blog-overview](/design/BlogOverview.png)  
 > Blog Overview
