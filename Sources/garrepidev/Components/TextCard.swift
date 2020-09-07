@@ -14,7 +14,7 @@ public class TextCard: HTMLComponent {
             .shadow(x: 20, y: 30, color: GColors.cardShadow)
             .rawCSS("border", "1px solid #000000")
             .textAlign(.left)
-            .maxWidth(100, .percent)
+            .maxWidth(700, .px)
         
         super.init(.empty, [card])
     }

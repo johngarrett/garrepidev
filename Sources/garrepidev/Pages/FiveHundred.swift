@@ -25,8 +25,7 @@ public struct FiveHundred: HTMLPage {
 
                 [blog repo](https://github.com/johngarrett/garrepi-blog-posts)
                 """
-            )
-                .font(weight: "normal", size: 14, family: "CrimsonText")
+            ).font(weight: "normal", size: 14, family: "CrimsonText")
         }
         .backgroundColor(GColors.lightRed)
         .textAlign(.center)

@@ -5,19 +5,21 @@ public class Root: HTMLComponent {
     public let head: Head
     override public func render() -> String {
         let body = Div("g_body") {
-            childComponents?.compactMap { $0 } ?? []
+            Sidebar().render()
+            Div("g_contet") {
+                childComponents?.compactMap { $0 } ?? []
+            }
         }
         .display(.grid)
-        .gridGap(20, .px)
         .height(100, .percent)
         .width(100, .percent)
-        .rawCSS("grid-template-columns", ".1fr .9fr")
+        .rawCSS("grid-template-columns", "15% 85%")
         
         return """
         <!DOCTYPE html>
         <html lang="en">
             \(head.render())
-            <body>
+            <body style="margin: 0; background-color: #b5b5b5; height: 100vh; width: 100%;">
                 \(body.render())
             </body>
         </html>

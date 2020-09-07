@@ -15,5 +15,7 @@ public struct ProjectsOverview: HTMLPage {
         }
         .display(.grid)
         .gridGap(2, .rem)
+        .padding(20)
+        .rawCSS("grid-template-columns", "repeat(auto-fit, minmax(300px, 1fr));")
     }
 }

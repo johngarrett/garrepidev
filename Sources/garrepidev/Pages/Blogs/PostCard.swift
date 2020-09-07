@@ -34,7 +34,7 @@ public class PostCard: HTMLComponent {
                 .wordWrap(.brk)
                 .minHeight(200)
                 .backgroundColor(GColors.white)
-                .margin(top: 10, right: 10, left: 10)
+                .margin(3, .percent)
                 .shadow(x: 20, y: 30, color: GColors.cardShadow)
                 .rawCSS("border", "1px solid #000000")
         

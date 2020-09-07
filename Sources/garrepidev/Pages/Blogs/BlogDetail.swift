@@ -11,7 +11,10 @@ public struct BlogDetail: HTMLPage {
             Markdown(cls: "g_blog_detail", post.body)
                 .backgroundColor(CSSColor("#FFFFFF"))
                 .font(weight: "normal", size: 14, family: "CrimsonText")
-                .rawCSS("border", "1px solid #000000")
+                .rawCSS("border-top", "1px solid #000000")
+                .rawCSS("border-bottom", "1px solid #000000")
+                .margin(top: 40)
+                .padding(20)
         }
     }
     

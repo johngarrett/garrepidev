@@ -24,10 +24,6 @@ func cssHandler(request: HTTPRequest, response: HTTPResponse) {
         pre {
             overflow: scroll;
         }
-
-        @media (min-width: 990px) {
-          .g_project_cards { grid-template-columns: repeat(2, 500px); }
-        }
     """)
     response.completed()
 }
