@@ -8,7 +8,10 @@ public struct BlogDetail: HTMLPage {
     public func render() -> HTMLComponent {
         VStack {
             PostCard(post)
-            TextCard(with: post.body)
+            Markdown(cls: "g_blog_detail", post.body)
+                .backgroundColor(CSSColor("#FFFFFF"))
+                .font(weight: "normal", size: 14, family: "CrimsonText")
+                .rawCSS("border", "1px solid #000000")
         }
     }
     

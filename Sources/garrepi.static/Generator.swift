@@ -104,24 +104,7 @@ struct Generator {
                 "<link rel=\"stylesheet\" href=\"/css/styles.css\">"
             ]
         )
-        let view = HTMLComponent {
-            sidebar.render()
-            HStack("g_content", justify: .center, wrap: .wrap) {
-                body.render()
-            }
-            .margin(right: 7.5, left: 15, .percent)
-        }
-        
-        let htmlOutput =
-        """
-        <!DOCTYPE html>
-        <html lang="en">
-            \(head.render())
-            <body style="width: 100%; height: 100%; margin: 0; background-color: #b5b5b5;">
-                \(view.render())
-            </body>
-        </html>
-        """
+        let htmlOutput = Root(head, [body.render()])
         
         do {
             try htmlOutput.write(

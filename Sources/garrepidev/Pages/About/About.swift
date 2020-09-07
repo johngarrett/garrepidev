@@ -26,7 +26,9 @@ public struct About: HTMLPage {
                     [johngarrett.github.io](https://github.com/johngarrett/johngarrett.github.io)  
                     > the static github pages you're looking at now
                     """
-            ).padding(right: 5, left: 5, .percent)
+            )
+                .font(weight: "normal", size: 14, family: "CrimsonText")
+                .padding(right: 5, left: 5, .percent)
         }
         .backgroundColor(GColors.white)
         .textAlign(.center)

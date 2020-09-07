@@ -90,6 +90,15 @@
           "revision": "5a08c2a596df23a3ae30b6ac9cb509a38384166c",
           "version": "3.1.4"
         }
+      },
+      {
+        "package": "Splash",
+        "repositoryURL": "https://github.com/JohnSundell/Splash",
+        "state": {
+          "branch": null,
+          "revision": "f25dd8c9f16be1f81a152f6861d7216c3c9302da",
+          "version": "0.14.0"
+        }
       }
     ]
   },

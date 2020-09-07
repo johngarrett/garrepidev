@@ -18,20 +18,9 @@ public struct Sidebar: ComponentType {
             .padding(15, .percent)
         }
         .height(100, .percent)
-        .width(15, .percent)
-        .maxWidth(175)
-        .minWidth(30)
         .backgroundColor(GColors.white)
-        .position(top: 0, left: 0)
         .zIndex(1)
-        .rawCSS("float", "left")
-        .rawCSS("position", "fixed")
-        .rawCSS("overflow-x", "hidden")
         .rawCSS("border-right", "1px solid #000000")
-    }
-    
-    public func change(to page: GPage) {
-        print("switch to \(page)")
     }
     
     private func makeLink(_ title: String, href: String) -> HTMLComponent {

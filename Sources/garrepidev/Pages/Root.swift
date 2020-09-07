@@ -4,18 +4,21 @@ import HyperSwift
 public class Root: HTMLComponent {
     public let head: Head
     override public func render() -> String {
-        var renderedComponents = ""
-        for component in childComponents ?? [] {
-            renderedComponents.append(component.render())
+        let body = Div("g_body") {
+            childComponents?.compactMap { $0 } ?? []
         }
+        .display(.grid)
+        .gridGap(20, .px)
+        .height(100, .percent)
+        .width(100, .percent)
+        .rawCSS("grid-template-columns", ".1fr .9fr")
         
-        return 
-        """
+        return """
         <!DOCTYPE html>
         <html lang="en">
             \(head.render())
             <body>
-            \(renderedComponents)
+                \(body.render())
             </body>
         </html>
         """

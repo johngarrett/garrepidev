@@ -8,6 +8,7 @@ public struct ProjectDetail: HTMLPage {
     public func render() -> HTMLComponent {
         HStack(justify: .center, align: .center, wrap: .reverse) {
             TextCard(with: project.readme)
+                .font(weight: "normal", size: 14, family: "CrimsonText")
             ProjectCard(from: project)
         }
     }

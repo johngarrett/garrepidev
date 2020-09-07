@@ -49,7 +49,7 @@ func getProjects(at folder: URL) -> [Project]? {
 var routes = Routes()
 
 let stylesheets = [
-    "<link rel=\"stylesheet\" href=\"styles.css\" type=\"text/css\">"
+    "<link rel=\"stylesheet\" href=\"/styles.css\" type=\"text/css\">"
 ]
 let head = Head(title: "garreπ", stylesheets: stylesheets)
 let blogs = BlogOverview(
@@ -68,8 +68,11 @@ routes.add(method: .get, uri: "/projects/*", handler: gHandler.projectHandler)
 routes.add(method: .get, uri: "/images/*", handler: gHandler.imgHandler)
 routes.add(method: .get, uri: "/*", handler: gHandler.generalHandler)
 
-try HTTPServer.launch(name: "localhost",
-					  port: 8181,
-					  routes: routes,
-					  responseFilters: [
-						(PerfectHTTPServer.HTTPFilter.contentCompression(data: [:]), HTTPFilterPriority.high)])
+try HTTPServer.launch(
+    name: "localhost",
+    port: 8181,
+    routes: routes,
+    responseFilters: [
+        (PerfectHTTPServer.HTTPFilter.contentCompression(data: [:]), HTTPFilterPriority.high)
+    ]
+)

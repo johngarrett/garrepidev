@@ -12,10 +12,11 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/johngarrett/HyperSwift", .branch("master")),
         .package(name: "Ink", url: "https://github.com/johnsundell/ink.git", from: "0.1.0"),
-        .package(name: "PerfectHTTPServer", url: "https://github.com/PerfectlySoft/Perfect-HTTPServer.git", from: "3.0.0")
+        .package(name: "PerfectHTTPServer", url: "https://github.com/PerfectlySoft/Perfect-HTTPServer.git", from: "3.0.0"),
+        .package(name: "Splash", url: "https://github.com/JohnSundell/Splash", from: "0.14.0")
     ],
     targets: [
-        .target(name: "garrepidev",dependencies: ["HyperSwift", "Ink"]),
+        .target(name: "garrepidev",dependencies: ["HyperSwift", "Ink", "Splash"]),
         .target(name: "garrepi.server",dependencies: ["garrepidev", "PerfectHTTPServer"]),
         .target(name: "garrepi.static",dependencies: ["garrepidev"])
     ]
