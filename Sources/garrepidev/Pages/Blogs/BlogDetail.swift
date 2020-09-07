@@ -7,10 +7,12 @@ public struct BlogDetail: HTMLPage {
     
     public func render() -> HTMLComponent {
         VStack {
-            PostCard(post)
+            Div {
+                PostCard(post)
+            }.margin(3, .percent)
             Markdown(cls: "g_blog_detail", post.body)
                 .backgroundColor(CSSColor("#FFFFFF"))
-                .font(weight: "normal", size: 14, family: "CrimsonText")
+                .font(weight: "normal", size: 16, family: "CrimsonText")
                 .rawCSS("border-top", "1px solid #000000")
                 .rawCSS("border-bottom", "1px solid #000000")
                 .margin(top: 40)

@@ -48,14 +48,23 @@ let stylesheets = [
     "<link rel=\"stylesheet\" href=\"/styles.css\" type=\"text/css\">"
 ]
 let head = Head(title: "garreπ", stylesheets: stylesheets)
-let blogs = BlogOverview(
-    getBlogs(at: URL(fileURLWithPath: "/Users/garrepi/dev/johngarrett.github.io/blog-posts"))
-)
-let projects = ProjectsOverview(
-    getProjects(at: URL(fileURLWithPath: "/Users/garrepi/dev/johngarrett.github.io/project-posts"))
-)
+var blogs:[Post] = []
+for _ in 1...15 {
+    getBlogs(at: URL(fileURLWithPath: "/Users/garrepi/dev/johngarrett.github.io/blog-posts"))?.forEach {
+        blogs.append($0)
+    }
+}
+let blogOverview = BlogOverview(blogs)
 
-let gHandler = GHandler(head, About(), blogs, projects)
+var projects:[Project] = []
+for _ in 1...15 {
+    getProjects(at: URL(fileURLWithPath: "/Users/garrepi/dev/johngarrett.github.io/project-posts"))?.forEach {
+        projects.append($0)
+    }
+}
+let projectsOverview = ProjectsOverview(projects)
+
+let gHandler = GHandler(head, About(), blogOverview, projectsOverview)
 
 routes.add(method: .get, uri: "/styles.css", handler: cssHandler)
 routes.add(method: .get, uri: "/about/*", handler: gHandler.aboutHandler)

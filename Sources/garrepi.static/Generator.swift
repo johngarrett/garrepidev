@@ -20,7 +20,16 @@ struct Generator {
             src: url("/../fonts/SFMono-Bold.otf") format('opentype');
             font-weight: bold;
         }
-        
+        @font-face {
+            font-family: "CrimsonText";
+            src: url("/../fonts/CrimsonText-Regular.ttf") format('truetype');
+            font-weight: normal;
+        }
+        @font-face {
+            font-family: "CrimsonText";
+            src: url("/../fonts/CrimsonText-Blog.ttf") format('truetype');
+            font-weight: bold;
+        }
         body {
             font-family: "SF Mono";
         }
@@ -33,13 +42,6 @@ struct Generator {
             top: -5px;
             left: -5px;
             box-shadow: 25px 35px 0px 0px rgba(0, 0, 0, 0.6);
-        }
-        pre {
-            overflow: scroll;
-        }
-        
-        @media (min-width: 990px) {
-            .g_project_cards { grid-template-columns: repeat(2, 500px); }
         }
         """
         do {

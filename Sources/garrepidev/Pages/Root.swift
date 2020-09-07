@@ -13,7 +13,7 @@ public class Root: HTMLComponent {
         .display(.grid)
         .height(100, .percent)
         .width(100, .percent)
-        .rawCSS("grid-template-columns", "15% 85%")
+        .rawCSS("grid-template-columns", "minmax(150px, 180px) 1fr")
         
         return """
         <!DOCTYPE html>

@@ -25,16 +25,19 @@ public struct About: HTMLPage {
 
                     [johngarrett.github.io](https://github.com/johngarrett/johngarrett.github.io)  
                     > the static github pages you're looking at now
+                    
+                    [@garrepi](https://twitter.com/garrepi)
                     """
             )
-                .font(weight: "normal", size: 14, family: "CrimsonText")
-                .padding(right: 5, left: 5, .percent)
+            .font(weight: "normal", size: 16, family: "CrimsonText")
+            .padding(10, .px)
         }
         .backgroundColor(GColors.white)
         .textAlign(.center)
         .shadow(x: 20, y: 30, color: GColors.cardShadow)
         .minWidth(80, .percent)
         .rawCSS("border", "1px solid #000000")
+        .margin(3, .percent)
     }
     
     public init() {}

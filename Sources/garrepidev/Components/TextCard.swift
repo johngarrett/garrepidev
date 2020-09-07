@@ -5,7 +5,7 @@ public class TextCard: HTMLComponent {
     init(with text: String) {
         let card =
             Div(GClasses.textCard.rawValue) {
-                RawHTML(text)
+                Markdown(cls: "g_text_card_text", text)
             }
             .backgroundColor(GColors.white)
             .margin(3, .percent)

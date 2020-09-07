@@ -6,11 +6,12 @@ public struct ProjectDetail: HTMLPage {
     static public var absoluteAddress: String = "testPost.html"
     
     public func render() -> HTMLComponent {
-        HStack(justify: .center, align: .center, wrap: .reverse) {
+        HStack("g_project_detail", justify: .center, align: .center, wrap: .reverse) {
             TextCard(with: project.readme)
-                .font(weight: "normal", size: 14, family: "CrimsonText")
+                .font(weight: "normal", size: 16, family: "CrimsonText")
             ProjectCard(from: project)
         }
+        .minHeight(100, .percent)
     }
     
     public init?(with project: Project?) {
