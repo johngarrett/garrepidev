@@ -5,7 +5,7 @@ public struct Sidebar: ComponentType {
     public init() { } 
     public func render() -> HTMLComponent {
         VStack("g_sidebar", justify: .flexStart) {
-            HStack("g_sidebar_links", justify: .spaceAround){
+            HStack("g_sidebar_links", justify: .spaceAround, align: .center){
                 makeLink("⑊ PROJECTS", href: ProjectsOverview.absoluteAddress)
                 makeLink("✑ BLOG", href: BlogOverview.absoluteAddress)
                 makeLink("π ABOUT", href: About.absoluteAddress)
