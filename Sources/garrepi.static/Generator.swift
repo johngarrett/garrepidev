@@ -43,6 +43,12 @@ struct Generator {
             left: -5px;
             box-shadow: 25px 35px 0px 0px rgba(0, 0, 0, 0.6);
         }
+        g_blog_detail {
+            img {
+                max-width: 500px;
+                width: 80%;
+            }
+        }
         """
         do {
             try stylesheet.write(

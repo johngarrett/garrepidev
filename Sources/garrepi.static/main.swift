@@ -1,6 +1,6 @@
 import Foundation
 
-let basePath = "/Users/garrepi/dev/johngarrett.github.io"
+let basePath = "/home/garrepi/dev/johngarrett.github.io"
 let saveLocation = URL(fileURLWithPath: basePath)
 let generator = Generator(saveLocation: saveLocation)
 
