@@ -2,11 +2,13 @@ import Foundation
 import HyperSwift
 
 public struct ProjectsOverview: HTMLPage {
-    private var projects: [Project?]
+    public var projects: [Project]!
+    public var projectDetailPages: [ProjectDetail]!
     static public var absoluteAddress = "/projects"
     
     public init(_ projects: [Project]? = nil) {
         self.projects = projects ?? []
+        self.projectDetailPages = self.projects.compactMap { ProjectDetail(with: $0) }
     }
     
     public func render() -> HTMLComponent {

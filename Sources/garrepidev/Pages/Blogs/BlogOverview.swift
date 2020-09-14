@@ -2,11 +2,14 @@ import Foundation
 import HyperSwift
 
 public struct BlogOverview: HTMLPage {
-    private var posts: [Post?]
+    public var posts: [Post]!
+    public var blogDetailPages: [BlogDetail]!
+
     static public var absoluteAddress = "/blog"
     
     public init(_ posts: [Post]? = nil) {
         self.posts = posts ?? []
+        self.blogDetailPages = self.posts.compactMap { BlogDetail(with: $0) }
     }
     
     public func render() -> HTMLComponent {
