@@ -2,9 +2,34 @@ import Foundation
 import PerfectHTTP
 import PerfectLib
 import garrepidev
+import HyperSwift
 
 struct GHandler {
     let base: GBase
+
+    func cssHandler(request: HTTPRequest, response: HTTPResponse) {
+        response.setHeader(.contentType, value: "text/css")
+        response.appendBody(string: CSSStyleSheet.generateStyleSheet())
+        response.appendBody(string: """
+            body {
+                font-family: "SF Mono";
+            }
+
+            .g_sidebar a:hover {
+                text-decoration: underline;
+            }
+            .g_project_card:hover {
+                position: relative;
+                top: -5px;
+                left: -5px;
+                box-shadow: 25px 35px 0px 0px rgba(0, 0, 0, 0.6);
+            }
+            pre {
+                overflow: scroll;
+            }
+        """)
+        response.completed()
+    }
     func generalHandler(_ request: HTTPRequest, _ response: HTTPResponse) {
         response.setHeader(.contentType, value: "text/html")
         base.change(to: request.path == "/" ? .About : .FourOFour) 
@@ -21,8 +46,8 @@ struct GHandler {
     
     func blogHandler(_ request: HTTPRequest, _ response: HTTPResponse) {
         response.setHeader(.contentType, value: "text/html")
-        if let postName = request.path(after: "blog/") {
-            base.change(to: .BlogDetail, title: postName)
+        if let href = request.path(after: "blog/") {
+            base.change(to: .BlogDetail, at: "blog/\(href)")
         } else {
             base.change(to: .BlogOverview)
         }
@@ -33,8 +58,8 @@ struct GHandler {
     func projectHandler(_ request: HTTPRequest, _ response: HTTPResponse) {
         response.setHeader(.contentType, value: "text/html")
         
-        if let projectName = request.path(after: "projects/") {
-            base.change(to: .ProjectDetail, title: projectName)
+        if let href = request.path(after: "projects/") {
+            base.change(to: .ProjectDetail, at: "projects/\(href)")
         } else {
             base.change(to: .ProjectsOverview)
         }
