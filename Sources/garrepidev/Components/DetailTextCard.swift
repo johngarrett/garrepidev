@@ -21,6 +21,7 @@ public class DetailTextCard: HTMLComponent {
             .padding(top: 1, right: 2, bottom: 1, left: 2, .percent)
             .rawCSS("border", "1px solid #000000")
             .textAlign(.left)
+            .rawCSS("img { max-width", "80%; }\\")
 
         if page == .project {
             card = card
