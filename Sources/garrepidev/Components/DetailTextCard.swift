@@ -13,7 +13,12 @@ public class DetailTextCard: HTMLComponent {
         
         var card =
             Div(cssClass) {
-                parser.html(from: text)
+                """
+                <style>
+                    img {max-width: 90%;}
+                </style>
+                \(parser.html(from: text))
+                """
             }
             .backgroundColor(GColors.white)
             .font(weight: "normal", size: 16, family: "CrimsonText")
@@ -21,7 +26,6 @@ public class DetailTextCard: HTMLComponent {
             .padding(top: 1, right: 2, bottom: 1, left: 2, .percent)
             .rawCSS("border", "1px solid #000000")
             .textAlign(.left)
-            .rawCSS("img { max-width", "80%; }\\")
 
         if page == .project {
             card = card
@@ -33,7 +37,6 @@ public class DetailTextCard: HTMLComponent {
                 .margin(top: 40)
                 .padding(20)
         }
-        
         super.init(.empty, [card])
     }
 }
