@@ -66,9 +66,9 @@ struct Generator {
         - About, 404, 500, etc.
      */
     func generateCommon() {
-        savePage(FourOFour(), title: "page not found", "404.html")
-        savePage(About(), title: "garreπ | about", "about.html")
-        savePage(FiveHundred(), title: "i'm sorry...", "500.html")
+        savePage(About())
+        savePage(FourOFour())
+        savePage(FiveHundred())
     }
     
     func generateBlogs(at folder: URL) {
@@ -76,15 +76,11 @@ struct Generator {
             print("[CRITICAL] could not generate blogs from \(folder.path)")
             return
         }
-        let posts = blogFiles.compactMap { Post(from: folder.appendingPathComponent($0), href: $0.replacingOccurrences(of: ".md", with: ".html")) }
-        savePage(BlogOverview(posts), title: "garreπ | blogs", "blog.html")
-        for post in posts {
-            if let page = BlogDetail(with: post) {
-                savePage(page, title: post.title, post.href)
-            } else {
-                print("[ERROR] Could not generate post \(post.title)")
-            }
+        let posts = blogFiles.compactMap {
+            Post(from: folder.appendingPathComponent($0), href: $0.replacingOccurrences(of: ".md", with: ""))
         }
+        let overviewPage = BlogOverview(posts)
+        overviewPage.blogDetailPages.forEach { savePage($0) }
     }
     
     func generateProjects(at folder: URL) {
@@ -93,34 +89,30 @@ struct Generator {
             return
         }
         let projects = projectFiles.compactMap {
-            Project(from: folder.appendingPathComponent($0), href: $0.replacingOccurrences(of: ".md", with: ".html"))
+            Project(from: folder.appendingPathComponent($0), href: $0.replacingOccurrences(of: ".md", with: ""))
         }
-        savePage(ProjectsOverview(projects), title: "garreπ | projects", "projects.html")
-        for project in projects {
-            if let page = ProjectDetail(with: project) {
-                savePage(page, title: project.title, project.href)
-            } else {
-                print("[ERROR] Could not generate project \(project.title)")
-            }
-        }
+        let overviewPage = ProjectsOverview(projects)
+        
+        savePage(overviewPage)
+        overviewPage.projectDetailPages.forEach { savePage($0) }
     }
     
-    private func savePage(_ body: HTMLPage, title: String, _ fileName: String) {
+    private func savePage(_ page: HTMLPage) {
         let head = Head(
-            title: title,
+            title: page.title,
             stylesheets: [
                 "<link rel=\"stylesheet\" href=\"/css/styles.css\">"
             ]
         )
-        let htmlOutput = Root(head, [body.render()]).render()
+        let htmlOutput = Root(head, [page.render()]).render()
         
         do {
             try htmlOutput.write(
-                to: saveLocation.appendingPathComponent(fileName),
+                to: saveLocation.appendingPathComponent(page.href + ".html"),
                 atomically: true,
                 encoding: String.Encoding.utf8
             )
-            print("saved page \(fileName)\t✓")
+            print("saved page \(page.href)\t✓")
         } catch let error as NSError {
             print("[CRITICAL] could not save htmlOutput: ", error.localizedDescription)
         }
