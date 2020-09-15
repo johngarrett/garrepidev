@@ -20,6 +20,6 @@ public struct ProjectsOverview: HTMLPage {
         .gridGap(2, .rem)
         .padding(20)
         .margin(bottom: 20)
-        .rawCSS("grid-template-columns", "repeat(auto-fit, minmax(300px, 1fr));")
+        .rawCSS("grid-template-columns", "repeat(auto-fit, minmax(400px, 1fr));")
     }
 }

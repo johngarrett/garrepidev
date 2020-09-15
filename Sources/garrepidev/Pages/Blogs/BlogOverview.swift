@@ -20,6 +20,8 @@ public struct BlogOverview: HTMLPage {
         }
         .rawCSS("display", "grid")
         .rawCSS("grid-gap", "3rem")
+        .rawCSS("justify-content", "center")
+        .rawCSS("grid-template-columns", "80%")
         .margin(top: 20, right: 40, bottom: 40, left: 20)
     }
 }
