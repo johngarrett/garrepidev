@@ -11,13 +11,7 @@ public struct BlogDetail: HTMLPage {
             Div {
                 PostCard(post)
             }.margin(3, .percent)
-            Markdown(cls: "g_blog_detail", post.body)
-                .backgroundColor(CSSColor("#FFFFFF"))
-                .font(weight: "normal", size: 20, family: "CrimsonText")
-                .rawCSS("border-top", "1px solid #000000")
-                .rawCSS("border-bottom", "1px solid #000000")
-                .margin(top: 40)
-                .padding(20)
+            DetailTextCard(with: post.body, for: .blog)
         }
     }
     
