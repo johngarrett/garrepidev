@@ -2,10 +2,12 @@ import Foundation
 import HyperSwift
 
 public struct BlogOverview: HTMLPage {
+    public var href: String = "/blog"
+    public var title: String = "garreπ | blog"
+    
     public var posts: [Post]!
     public var blogDetailPages: [BlogDetail]!
-
-    static public var absoluteAddress = "/blog"
+    
     
     public init(_ posts: [Post]? = nil) {
         self.posts = posts ?? []

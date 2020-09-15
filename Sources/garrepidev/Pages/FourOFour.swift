@@ -3,7 +3,8 @@ import HyperSwift
 
 public struct FourOFour: HTMLPage {
     public init() { }
-    public static var absoluteAddress: String = "/404"
+    public var href: String = "/404"
+    public var title: String = "garreπ | 404 error"
     
     public func render() -> HTMLComponent {
         VStack("g_fourOfour", justify: .center, align: .center) {

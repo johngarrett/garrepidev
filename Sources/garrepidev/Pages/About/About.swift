@@ -2,7 +2,9 @@ import Foundation
 import HyperSwift
 
 public struct About: HTMLPage {
-    static public var absoluteAddress = "/about"
+    public var href: String = "/about"
+    public var title: String = "garreπ | about"
+    
     public func render() -> HTMLComponent {
         Div(GClasses.aboutCard.rawValue) {
             HTMLComponent(.header1) { "About" }

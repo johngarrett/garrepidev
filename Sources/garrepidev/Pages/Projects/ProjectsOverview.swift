@@ -4,7 +4,8 @@ import HyperSwift
 public struct ProjectsOverview: HTMLPage {
     public var projects: [Project]!
     public var projectDetailPages: [ProjectDetail]!
-    static public var absoluteAddress = "/projects"
+    public var href = "/projects"
+    public var title = "garreπ | projects"
     
     public init(_ projects: [Project]? = nil) {
         self.projects = projects ?? []

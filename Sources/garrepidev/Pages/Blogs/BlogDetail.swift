@@ -2,8 +2,9 @@ import Foundation
 import HyperSwift
 
 public struct BlogDetail: HTMLPage {
+    public var href: String
+    public var title: String
     public let post: Post
-    static public var absoluteAddress: String = "testPost.html"
     
     public func render() -> HTMLComponent {
         VStack {
@@ -25,5 +26,7 @@ public struct BlogDetail: HTMLPage {
             return nil
         }
         self.post = post
+        self.href = post.href
+        self.title = post.title
     }
 }

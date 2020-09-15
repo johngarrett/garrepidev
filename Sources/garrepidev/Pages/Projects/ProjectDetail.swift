@@ -3,7 +3,8 @@ import HyperSwift
 
 public struct ProjectDetail: HTMLPage {
     public let project: Project
-    static public var absoluteAddress: String = "testPost.html"
+    public var href: String
+    public var title: String
     
     public func render() -> HTMLComponent {
         HStack("g_project_detail", justify: .center, align: .center, wrap: .reverse) {
@@ -19,5 +20,7 @@ public struct ProjectDetail: HTMLPage {
             return nil
         }
         self.project = project
+        self.href = project.href
+        self.title = project.title
     }
 }

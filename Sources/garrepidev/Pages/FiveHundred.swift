@@ -2,7 +2,9 @@ import Foundation
 import HyperSwift
 
 public struct FiveHundred: HTMLPage {
-    public static var absoluteAddress: String = "/500"
+    public var href: String = "/500"
+    public var title: String = "garreπ | 500 error"
+    
     public init() {}
     
     public func render() -> HTMLComponent {
