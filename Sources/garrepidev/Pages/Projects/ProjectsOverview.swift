@@ -21,5 +21,6 @@ public struct ProjectsOverview: HTMLPage {
         .padding(20)
         .margin(bottom: 20)
         .rawCSS("grid-template-columns", "repeat(auto-fit, minmax(400px, 1fr));")
+        .rawCSS("align-content", "baseline")
     }
 }

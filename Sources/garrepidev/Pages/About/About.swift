@@ -33,7 +33,7 @@ public struct About: HTMLPage {
                     """
             )
             .font(weight: .normal, size: 16, family: "SF Mono")
-            .padding(10, .px)
+            .padding(10)
         }
         .backgroundColor(GColors.white)
         .textAlign(.center)
@@ -42,8 +42,9 @@ public struct About: HTMLPage {
         .maxWidth(75, .percent)
         .border(1, .solid, color: CSSColor("#000000"))
         .rawCSS("place-self", "center")
-        .padding(10, .px)
-        .margin(top: 20, bottom: 20)
+        .rawCSS("align-self", "baseline")
+        .padding(10)
+        .margin(top: 30, bottom: 50)
         
     }
     
