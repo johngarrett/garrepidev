@@ -8,10 +8,10 @@ public class PostCard: HTMLComponent {
             Div(GClasses.blogCard.rawValue, attributes: ["onclick": "location.href='\(post.href)';"]) {
                 HStack("g_post_top", justify: .spaceBetween, align: .center) {
                     HTMLComponent(.header1) { post.title }
-                        .font(weight: "bold", size: 25, family: "SF Mono")
+                        .font(weight: .bold, size: 25, family: "SF Mono")
                         .width(70, .percent)
                     Paragraph("\(post.date)<br />\(wordCount) words")
-                        .font(weight: "regular", size: 13, family: "SF Mono")
+                        .font(weight: .normal, size: 13, family: "SF Mono")
                         .width(20, .percent)
                         .color(GColors.lightGray)
                         .textAlign(.right)
@@ -22,7 +22,7 @@ public class PostCard: HTMLComponent {
                     Div {
                         Markdown(cls: "g_post_abstract", post.abstract)
                             .textAlign(.left)
-                            .font(weight: "regular", size: 13, family: "SF Mono")
+                            .font(weight: .normal, size: 13, family: "SF Mono")
                             .color(GColors.lightGray)
                         HStack(justify: .center) { post.tags }
                     }
@@ -38,7 +38,7 @@ public class PostCard: HTMLComponent {
                 .minHeight(200)
                 .backgroundColor(GColors.white)
                 .shadow(x: 20, y: 30, color: GColors.cardShadow)
-                .rawCSS("border", "1px solid #000000")
+                .border(1, .solid, color: CSSColor("#000000"))
         
         super.init(.empty, [card])
     }

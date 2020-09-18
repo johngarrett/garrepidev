@@ -18,12 +18,12 @@ public struct Sidebar: ComponentType {
         .height(100, .percent)
         .backgroundColor(GColors.white)
         .zIndex(1)
-        .rawCSS("border-right", "1px solid #000000")
+        .borderBottom(1, .solid, color: CSSColor("#000000"))
     }
     
     private func makeLink(_ title: String, href: String) -> HTMLComponent {
         Link(title, cls: "g_sidebar-a", href: href)
-            .font(weight: "bold", size: 16, family: "SF Mono")
+            .font(weight: .bold, size: 16, family: "SF Mono")
             .textDecoration(.none)
             .color(GColors.black)
             .wordWrap(.brk)

@@ -12,7 +12,7 @@ public struct FourOFour: HTMLPage {
                 .width(200)
                 .height(200)
             Header(.header3) { "HTTP 404" }
-                .font(weight: "bold", size: 40, family: "SF Mono")
+                .font(weight: .bold, size: 40, family: "SF Mono")
             Paragraph("Page Not Found")
         }
         .backgroundColor(GColors.lightRed)
@@ -23,6 +23,6 @@ public struct FourOFour: HTMLPage {
         .display(.flex)
         .shadow(x: 20, y: 30, color: GColors.cardShadow)
         .padding(top: 1, right: 1, bottom: 1, left: 1, .percent)
-        .rawCSS("border", "1px solid #000000")
+        .border(1, .solid, color: CSSColor("#000000"))
     }
 }

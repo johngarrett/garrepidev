@@ -9,7 +9,7 @@ public struct About: HTMLPage {
         Div(GClasses.aboutCard.rawValue) {
             HTMLComponent(.header1) { "About" }
                 .color(GColors.black)
-                .font(weight: "bold", size: 45, family: "SF Mono")
+                .font(weight: .bold, size: 45, family: "SF Mono")
 
             Markdown(cls: "about_text",
                     """
@@ -31,14 +31,14 @@ public struct About: HTMLPage {
                     [@garrepi](https://twitter.com/garrepi)
                     """
             )
-            .font(weight: "normal", size: 16, family: "SF Mono")
+            .font(weight: .normal, size: 16, family: "SF Mono")
             .padding(10, .px)
         }
         .backgroundColor(GColors.white)
         .textAlign(.center)
         .shadow(x: 20, y: 30, color: GColors.cardShadow)
         .minWidth(80, .percent)
-        .rawCSS("border", "1px solid #000000")
+        .border(1, .solid, color: CSSColor("#000000"))
         .margin(3, .percent)
     }
     

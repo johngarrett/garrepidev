@@ -14,7 +14,7 @@ public struct FiveHundred: HTMLPage {
                     .width(100)
                     .height(100)
                 Header(.header3) { "HTTP 500" }
-                    .font(weight: "bold", size: 40, family: "SF Mono")
+                    .font(weight: .bold, size: 40, family: "SF Mono")
             }
             
             Paragraph(
@@ -27,7 +27,7 @@ public struct FiveHundred: HTMLPage {
 
                 [blog repo](https://github.com/johngarrett/garrepi-blog-posts)
                 """
-            ).font(weight: "normal", size: 16, family: "CrimsonText")
+            ).font(weight: .normal, size: 16, family: "CrimsonText")
         }
         .backgroundColor(GColors.lightRed)
         .textAlign(.center)
@@ -35,6 +35,6 @@ public struct FiveHundred: HTMLPage {
         .display(.flex)
         .shadow(x: 20, y: 30, color: GColors.cardShadow)
         .padding(top: 1, right: 1, bottom: 1, left: 1, .percent)
-        .rawCSS("border", "1px solid #000000")
+        .border(1, .solid, color: CSSColor("#000000"))
     }
 }

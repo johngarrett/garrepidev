@@ -8,7 +8,7 @@ public class Card: HTMLComponent {
             .backgroundColor(GColors.white)
             .margin(top: 10, right: 10, left: 10)
             .shadow(x: 20, y: 30, color: GColors.cardShadow)
-            .rawCSS("border", "1px solid #000000")
+            .border(1, .solid, color: CSSColor("#000000"))
         
         super.init(.empty, [card])
     }

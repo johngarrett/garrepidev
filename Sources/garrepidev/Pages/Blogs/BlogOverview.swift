@@ -18,9 +18,9 @@ public struct BlogOverview: HTMLPage {
         Div(GClasses.blogCardsGrid.rawValue) {
             posts.compactMap { $0 }.map{ PostCard($0) }
         }
-        .rawCSS("display", "grid")
-        .rawCSS("grid-gap", "3rem")
-        .rawCSS("justify-content", "center")
+        .display(.grid)
+        .gridGap(3, .rem)
+        .justifyContent(.center)
         .rawCSS("grid-template-columns", "80%")
         .margin(top: 20, right: 40, bottom: 40, left: 20)
     }

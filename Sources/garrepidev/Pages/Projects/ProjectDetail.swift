@@ -10,9 +10,9 @@ public struct ProjectDetail: HTMLPage {
         HStack("g_project_detail", justify: .center, align: .center, wrap: .reverse) {
             DetailTextCard(with: project.readme, for: .project)
                 .shadow(x: 20, y: 30, color: GColors.cardShadow)
-                .font(weight: "normal", size: 16, family: "CrimsonText")
+                .font(weight: .normal, size: 16, family: "CrimsonText")
                 .margin(3, .percent)
-                .maxWidth(700, .px)
+                .maxWidth(80, .percent)
             ProjectCard(from: project)
         }
         .minHeight(100, .percent)

@@ -21,10 +21,10 @@ public class DetailTextCard: HTMLComponent {
                 """
             }
             .backgroundColor(GColors.white)
-            .font(weight: "normal", size: 16, family: "CrimsonText")
+            .font(weight: .normal, size: 16, family: "CrimsonText")
             .display(.inlineBlock)
             .padding(top: 1, right: 2, bottom: 1, left: 2, .percent)
-            .rawCSS("border", "1px solid #000000")
+            .border(1, .solid, color: CSSColor("#000000"))
             .textAlign(.left)
 
         if page == .project {

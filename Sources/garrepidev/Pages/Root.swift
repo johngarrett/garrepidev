@@ -9,6 +9,7 @@ public class Root: HTMLComponent {
             Div("g_contet") {
                 childComponents?.compactMap { $0 } ?? []
             }
+            .display(.grid)
         }
         .display(.grid)
         .height(100, .percent)
@@ -74,4 +75,3 @@ public struct RootBuilder {
         return HTMLComponent(.empty, components)
     }
 }
-

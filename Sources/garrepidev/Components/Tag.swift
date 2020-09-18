@@ -11,7 +11,7 @@ public class Tag: HTMLComponent {
                     .margin(top: 2, right: 10, bottom: 2, left: 10)
                     .textAlign(.center)
                     .color(GColors.white)
-                    .font(weight: "bold", size: 13, family: "SF Mono")
+                    .font(weight: .bold, size: 13, family: "SF Mono")
             }
             .backgroundColor(CSSColor("#FFD6AF"))
             .whiteSpace(.nowrap)
