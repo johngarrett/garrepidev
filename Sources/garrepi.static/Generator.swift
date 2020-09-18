@@ -80,6 +80,8 @@ struct Generator {
             Post(from: folder.appendingPathComponent($0), href: $0.replacingOccurrences(of: ".md", with: ""))
         }
         let overviewPage = BlogOverview(posts)
+        
+        savePage(overviewPage)
         overviewPage.blogDetailPages.forEach { savePage($0) }
     }
     

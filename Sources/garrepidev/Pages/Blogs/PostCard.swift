@@ -39,11 +39,11 @@ public class PostCard: HTMLComponent {
                 }
                 .padding(right: 3, bottom: 1, left: 3, .percent)
             }
-                .wordWrap(.brk)
-                .minHeight(200)
-                .backgroundColor(GColors.white)
-                .shadow(x: 20, y: 30, color: GColors.cardShadow)
-                .border(1, .solid, color: CSSColor("#000000"))
+            .wordWrap(.brk)
+            .minHeight(200)
+            .backgroundColor(GColors.white)
+            .shadow(x: 20, y: 30, color: GColors.cardShadow)
+            .border(1, .solid, color: CSSColor("#000000"))
         if page == .detailPage {
             card = card
                 .rawCSS("place-self", "center")
