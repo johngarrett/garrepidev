@@ -10,6 +10,7 @@ public struct About: HTMLPage {
             HTMLComponent(.header1) { "About" }
                 .color(GColors.black)
                 .font(weight: .bold, size: 45, family: "SF Mono")
+                .margin(top: 10, bottom: 10)
 
             Markdown(cls: "about_text",
                     """
@@ -37,9 +38,13 @@ public struct About: HTMLPage {
         .backgroundColor(GColors.white)
         .textAlign(.center)
         .shadow(x: 20, y: 30, color: GColors.cardShadow)
-        .minWidth(80, .percent)
+        .minWidth(50, .percent)
+        .maxWidth(75, .percent)
         .border(1, .solid, color: CSSColor("#000000"))
-        .margin(3, .percent)
+        .rawCSS("place-self", "center")
+        .padding(10, .px)
+        .margin(top: 20, bottom: 20)
+        
     }
     
     public init() {}
