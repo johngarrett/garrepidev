@@ -8,10 +8,12 @@ public struct BlogDetail: HTMLPage {
     
     public func render() -> HTMLComponent {
         VStack {
-            Div {
-                PostCard(post)
-            }.margin(3, .percent)
-            DetailTextCard(with: post.body, for: .blog)
+            PostCard(post, for: .detailPage)
+            Div("g_blog_detail_text") {
+                MarkdownContent(from: post.body)
+            }
+            .backgroundColor(GColors.white)
+            .border(1, .solid, color: CSSColor("#000000"))
         }
     }
     

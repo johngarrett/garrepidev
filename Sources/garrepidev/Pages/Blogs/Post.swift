@@ -46,4 +46,10 @@ public struct Post {
             href: href
         )
     }
+    
+    public func getWordCount() -> Int {
+        body.components(separatedBy: .whitespacesAndNewlines)
+            .filter { !$0.isEmpty }
+            .count
+    }
 }

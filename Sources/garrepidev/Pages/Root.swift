@@ -12,15 +12,14 @@ public class Root: HTMLComponent {
             .display(.grid)
         }
         .display(.grid)
-        .height(100, .percent)
-        .width(100, .percent)
         .rawCSS("grid-template-rows", "40px 1fr")
-        
+        .rawCSS("width", "100vw")
+        .rawCSS("height", "100vh")
         return """
         <!DOCTYPE html>
         <html lang="en">
             \(head.render())
-            <body style="margin: 0; background-color: #b5b5b5; height: 100vh; width: 100%;">
+            <body style="margin: 0; background-color: #b5b5b5;">
                 \(body.render())
             </body>
         </html>

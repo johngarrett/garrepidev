@@ -8,11 +8,17 @@ public struct ProjectDetail: HTMLPage {
     
     public func render() -> HTMLComponent {
         HStack("g_project_detail", justify: .center, align: .center, wrap: .reverse) {
-            DetailTextCard(with: project.readme, for: .project)
-                .shadow(x: 20, y: 30, color: GColors.cardShadow)
-                .font(weight: .normal, size: 16, family: "CrimsonText")
-                .margin(3, .percent)
-                .maxWidth(80, .percent)
+            Div("g_project_detail_writeup") {
+                MarkdownContent(from: project.readme)
+            }
+            .backgroundColor(GColors.white)
+            .shadow(x: 20, y: 30, color: GColors.cardShadow)
+            .border(1, .solid, color: CSSColor("#000000"))
+            .display(.inlineBlock)
+            .margin(3, .percent)
+            .padding(top: 1, right: 2, bottom: 1, left: 2, .percent)
+            .maxWidth(700, .px)
+            
             ProjectCard(from: project)
         }
         .minHeight(100, .percent)

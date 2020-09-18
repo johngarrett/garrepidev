@@ -2,15 +2,20 @@ import Foundation
 import HyperSwift
 
 public class PostCard: HTMLComponent {
-    init(_ post: Post) {
-        let wordCount = post.body.components(separatedBy: .whitespacesAndNewlines).filter { !$0.isEmpty }.count
-        let card =
-            Div(GClasses.blogCard.rawValue, attributes: ["onclick": "location.href='\(post.href)';"]) {
+    enum Page: String {
+        case overviewPage, detailPage
+    }
+    
+    init(_ post: Post, for page: Page = .overviewPage) {
+        let attributes = page == .overviewPage ?  ["onclick": "location.href='\(post.href)';"] : ["":""]
+        let cssClass = "g_post_card_\(page.rawValue)"
+        var card =
+            Div(cssClass, attributes: attributes) {
                 HStack("g_post_top", justify: .spaceBetween, align: .center) {
                     HTMLComponent(.header1) { post.title }
                         .font(weight: .bold, size: 25, family: "SF Mono")
                         .width(70, .percent)
-                    Paragraph("\(post.date)<br />\(wordCount) words")
+                    Paragraph("\(post.date)<br />\(post.getWordCount()) words")
                         .font(weight: .normal, size: 13, family: "SF Mono")
                         .width(20, .percent)
                         .color(GColors.lightGray)
@@ -39,6 +44,13 @@ public class PostCard: HTMLComponent {
                 .backgroundColor(GColors.white)
                 .shadow(x: 20, y: 30, color: GColors.cardShadow)
                 .border(1, .solid, color: CSSColor("#000000"))
+        if page == .detailPage {
+            card = card
+                .rawCSS("place-self", "center")
+                .width(80, .percent)
+                .maxWidth(800)
+                .margin(top: 30, bottom: 50)
+        }
         
         super.init(.empty, [card])
     }

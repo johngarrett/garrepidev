@@ -16,7 +16,7 @@ public struct BlogOverview: HTMLPage {
     
     public func render() -> HTMLComponent {
         Div(GClasses.blogCardsGrid.rawValue) {
-            posts.compactMap { $0 }.map{ PostCard($0) }
+            posts.compactMap { $0 }.map{ PostCard($0, for: .detailPage) }
         }
         .display(.grid)
         .gridGap(3, .rem)
