@@ -12,7 +12,7 @@ public struct About: HTMLPage {
                 .font(weight: .bold, size: 45, family: "SF Mono")
                 .margin(top: 10, bottom: 10)
 
-            Markdown(cls: "about_text",
+            Markdown(cssClass: "about_text",
                     """
                     Welcome to my website -- this is where I host all my projects and blogs.
 

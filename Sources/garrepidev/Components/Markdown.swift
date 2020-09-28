@@ -10,8 +10,8 @@ public class Markdown: SimpleHTMLComponent {
         }.render()
     }
     
-    public init(cls: String = "g_markdown", _ text: String) {
+    public init(cssClass: String = "g_markdown", _ text: String) {
         self.parser = MarkdownParser()
-        super.init(text, cls: cls, .div)
+        super.init(text, cssClass: cssClass, .div)
     }
 }

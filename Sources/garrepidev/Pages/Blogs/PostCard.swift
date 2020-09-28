@@ -25,7 +25,7 @@ public class PostCard: HTMLComponent {
                 
                 HStack("g_post_bottom", justify: .spaceBetween, align: .center) {
                     Div {
-                        Markdown(cls: "g_post_abstract", post.abstract)
+                        Markdown(cssClass: "g_post_abstract", post.abstract)
                             .textAlign(.left)
                             .font(weight: .normal, size: 13, family: "SF Mono")
                             .color(GColors.lightGray)

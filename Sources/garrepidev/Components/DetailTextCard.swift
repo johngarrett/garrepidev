@@ -5,7 +5,7 @@ import Ink
 public class MarkdownContent: HTMLComponent {
     init(from text: String) {
         let parser = MarkdownParser()
-        let card =
+        let card: HTMLComponent =
             Div("g_markdown_content") {
                 """
                 <style>

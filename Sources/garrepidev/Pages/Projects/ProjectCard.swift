@@ -9,7 +9,7 @@ public class ProjectCard: HTMLComponent {
                     .font(weight: .bold, size: 26, family: "SF Mono")
                     .textAlign(.center)
                 HStack(justify: .center) { tags }.textAlign(.center)
-                Markdown(cls: "g_project_card_summary", text)
+                Markdown(cssClass: "g_project_card_summary", text)
                     .textAlign(.center)
                     .font(weight: .normal, size: 13, family: "SF Mono")
                     .color(GColors.lightGray)
