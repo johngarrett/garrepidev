@@ -10,8 +10,13 @@ public struct BlogOverview: HTMLPage {
     
     
     public init(_ posts: [Post]? = nil) {
-        self.posts = posts ?? []
-        self.blogDetailPages = self.posts.compactMap { BlogDetail(with: $0) }
+        self.posts = (posts ?? []).sorted(by: {
+            Int($0.date.replacingOccurrences(of: "/", with: "")) ?? -1
+                > Int($1.date.replacingOccurrences(of: "/", with: "")) ?? -1
+        })
+        self.blogDetailPages = self.posts.compactMap {
+            BlogDetail(with: $0)
+        }
     }
 
     public func render() -> HTMLComponent {
