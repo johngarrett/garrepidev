@@ -6,7 +6,7 @@ public class MarkdownContent: HTMLComponent {
     init(from text: String) {
         let parser = MarkdownParser()
         let card: HTMLComponent =
-            Div("g_markdown_content") {
+            Div("g_markdown_content markdown-body") {
                 """
                 <style>
                     img {max-width: 90%;}

@@ -1,5 +1,6 @@
 import Foundation
 import HyperSwift
+import SwiftUI
 
 public struct ProjectsOverview: HTMLPage {
     public var projects: [Project]!
@@ -20,7 +21,7 @@ public struct ProjectsOverview: HTMLPage {
         .gridGap(2, .rem)
         .padding(20)
         .margin(bottom: 20)
-        .rawCSS("grid-template-columns", "repeat(auto-fit, minmax(400px, 1fr));")
+        .rawCSS("grid-template-columns", "repeat(auto-fit, minmax(300px, 1fr));")
         .rawCSS("align-content", "baseline")
     }
 }
