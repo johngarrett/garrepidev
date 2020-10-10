@@ -15,6 +15,7 @@ public class Root: HTMLComponent {
         .rawCSS("grid-template-rows", "40px 1fr")
         .rawCSS("width", "100vw")
         .rawCSS("height", "100vh")
+        
         return """
         <!DOCTYPE html>
         <html lang="en">

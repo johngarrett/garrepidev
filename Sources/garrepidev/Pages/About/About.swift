@@ -72,6 +72,7 @@ public struct About: HTMLPage {
             .rawCSS("place-self", "center")
             .rawCSS("align-self", "baseline")
             
+            /*
             Paragraph("Experience")
                  .minWidth(50, .percent)
                 .maxWidth(75, .percent)
@@ -100,6 +101,7 @@ public struct About: HTMLPage {
             .rawCSS("grid-template-columns", "repeat(auto-fit, minmax(300px, 1fr));")
             .rawCSS("justify-items", "center")
             .rawCSS("place-self", "center")
+             */
         }
     }
     

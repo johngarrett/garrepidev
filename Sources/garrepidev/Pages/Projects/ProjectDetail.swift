@@ -22,6 +22,24 @@ public struct ProjectDetail: HTMLPage {
             ProjectCard(from: project)
         }
         .minHeight(100, .percent)
+        .inject(
+            """
+            \n
+            @media (max-width: 666px) {
+                .g_project_detail_writeup {
+                    margin: 0;
+                    width: 100%;
+                    border: unset;
+                    box-shadow: unset;
+                }
+                .g_project_detail > .g_project_card {
+                    width: 80%;
+                    margin-bottom: 60px;
+                }
+            }
+            \n
+            """
+        )
     }
     
     public init?(with project: Project?) {
