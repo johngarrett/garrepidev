@@ -35,8 +35,8 @@ let stylesheets = [
 ]
 
 let head = Head(title: "garreπ", stylesheets: stylesheets)
-let blogOverview = BlogOverview(blogs(from: URL(fileURLWithPath: "/Users/garrepi/documents/garrepi-blog-posts")))
-let projectsOverview = ProjectsOverview(projects(from: URL(fileURLWithPath: "/Users/garrepi/documents/garrepi-projects")))
+let blogOverview = BlogOverview(blogs(from: URL(fileURLWithPath: "/home/garrepi/documents/garrepi-blog-posts")))
+let projectsOverview = ProjectsOverview(projects(from: URL(fileURLWithPath: "/home/garrepi/documents/garrepi-projects")))
 
 let gHandler = GHandler(head, About(), blogOverview, projectsOverview)
 

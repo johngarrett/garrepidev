@@ -1,6 +1,5 @@
 import Foundation
 import HyperSwift
-import SwiftUI
 
 public struct ProjectsOverview: HTMLPage {
     public var projects: [Project]!
