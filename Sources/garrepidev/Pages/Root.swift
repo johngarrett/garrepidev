@@ -45,19 +45,14 @@ public class Head: HTMLComponent {
             \(stylesheets.joined(separator: "\n"))
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.css">
           <title>\(title)</title>
-            <!-- Analytical info, you can disable this if you'd like -->
-            <script type="text/javascript">
-              var _paq = window._paq = window._paq || [];
-              /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-              _paq.push(['trackPageView']);
-              _paq.push(['enableLinkTracking']);
-              (function() {
-                var u="https://garrepidev.matomo.cloud/";
-                _paq.push(['setTrackerUrl', u+'matomo.php']);
-                _paq.push(['setSiteId', '1']);
-                var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-                g.type='text/javascript'; g.async=true; g.src='//cdn.matomo.cloud/garrepidev.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
-              })();
+            <!-- I know, I hate google anayltics. i'm looking for free alternatives - you can disable this if you'd like -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-YZD103LZ87"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-YZD103LZ87');
             </script>
         </head>
         """
