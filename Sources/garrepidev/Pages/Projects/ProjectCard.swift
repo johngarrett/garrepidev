@@ -2,7 +2,7 @@ import Foundation
 import HyperSwift
 
 public class ProjectCard: HTMLComponent {
-    public init(title: String, tags: [Tag], text: String, imgURL: String, href: String) {
+    public init(title: String, tags: [Tag], text: String, imgURL: String, href: String, externalUrl: String) {
         let card =
             Div(GClasses.projectCard.rawValue, attributes: ["onclick": "location.href='\(href)';"]) {
                 HTMLComponent(.header1) { title }
@@ -19,6 +19,10 @@ public class ProjectCard: HTMLComponent {
                     .width(90, .percent)
                     .maxHeight(250)
                     .objectFit(.cover)
+                HTMLComponent(.a, attributes: ["href": externalUrl], [Paragraph("External Link")])
+                    .width(100, .percent)
+                    .textAlign(.center)
+                    .textDecoration(.none)
             }
             .wordWrap(.brk)
             .maxWidth(550)
@@ -33,6 +37,6 @@ public class ProjectCard: HTMLComponent {
 }
 extension ProjectCard {
     convenience init(from project: Project) {
-        self.init(title: project.title, tags: project.tags, text: project.abstract, imgURL: project.imageURL ?? "", href: project.href)
+        self.init(title: project.title, tags: project.tags, text: project.abstract, imgURL: project.imageURL ?? "", href: project.href, externalUrl: project.externalUrl ?? "")
     }
 }

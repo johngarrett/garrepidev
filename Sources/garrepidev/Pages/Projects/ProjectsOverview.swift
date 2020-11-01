@@ -15,7 +15,7 @@ public struct ProjectsOverview: HTMLPage {
     
     public func render() -> HTMLComponent {
         Div(GClasses.projectCardsGrid.rawValue) {
-            projects.compactMap { $0 }.map { ProjectCard(from: $0) }
+            projects.sorted(by: {$0.rank < $1.rank}).compactMap {ProjectCard(from: $0)}
         }
         .display(.grid)
         .gridGap(2, .rem)
