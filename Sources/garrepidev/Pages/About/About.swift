@@ -65,7 +65,7 @@ public struct About: HTMLPage {
                         .textAlign(.left)
                         .padding(top: 0, right: 20, bottom: 0, left: 10)
                         Div {
-                            Image(url: "https://garrepi.dev/images/avatar.png")
+                            Image(url: "https://garrepi.dev/images/avatar.jpg")
                                 .height(200)
                                 .width(200)
                                 .rawCSS("place-self", "center")
