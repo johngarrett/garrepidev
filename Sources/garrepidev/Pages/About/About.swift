@@ -118,7 +118,7 @@ public struct About: HTMLPage {
             \n
             @media (max-width: 944px) {
                 .g-about-grid {
-                    grid-template-columns: minmax(300px, 1fr);
+                    grid-template-columns: minmax(200px, 1fr);
                 }
             }
             \n

@@ -28,10 +28,22 @@ public class ProjectCard: HTMLComponent {
             .maxWidth(550)
             .minHeight(300)
             .backgroundColor(GColors.white)
-            .margin(top: 10, right: 10, bottom: 10, left: 10)
+            .margin(top: 10, right: 30, bottom: 10, left: 10)
             .shadow(x: 20, y: 30, color: GColors.cardShadow)
             .border(1, .solid, color: CSSColor("#000000"))
             .rawCSS("cursor", "pointer")
+            .inject(
+                """
+                @media (max-width: 500px) {
+                    \(GClasses.projectCard.rawValue) {
+                        box-shadow: rgba(0, 0, 0, 0.6) 10px 20px 0px 0px;
+                    }
+                    \(GClasses.projectCard.rawValue):hover {
+                        box-shadow: rgba(0, 0, 0, 0.6) 15px 25px 0px 0px;
+                    }
+                }
+                """
+            )
         
         super.init(.empty, [card])
     }

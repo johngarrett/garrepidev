@@ -11,7 +11,7 @@ public class PostCard: HTMLComponent {
         let cssClass = "g_post_card_\(page.rawValue)"
         var card =
             Div(cssClass, attributes: attributes) {
-                HStack("g_post_top", justify: .spaceBetween, align: .center) {
+                HStack("g_post_top", justify: .spaceBetween, align: .center, wrap: .wrap) {
                     HTMLComponent(.header1) { post.title }
                         .font(weight: .bold, size: 25, family: "SF Mono")
                         .width(70, .percent)
@@ -21,19 +21,18 @@ public class PostCard: HTMLComponent {
                         .color(GColors.lightGray)
                         .textAlign(.right)
                 }
-                .padding(top: 1, right: 2.5, bottom: 0, left: 2.5, .percent)
+                .padding(top: 10, right: 15, bottom: 0, left: 15)
                 
-                HStack("g_post_bottom", justify: .spaceBetween, align: .center) {
+                HStack("g_post_bottom", justify: .spaceBetween, align: .center, wrap: .wrap) {
                     Div {
                         Markdown(cssClass: "g_post_abstract", post.abstract)
                             .textAlign(.left)
                             .font(weight: .normal, size: 13, family: "SF Mono")
                             .color(GColors.lightGray)
-                        HStack(justify: .center) { post.tags }
+                        HStack(justify: .center, wrap: .wrap) { post.tags }
                     }
-                    .width(80, .percent)
                     Image(url: post.imageURL ?? "")
-                        .margin(right: 5, left: 5, .percent)
+                        .padding(right: 5, left: 5, .percent)
                         .maxWidth(150)
                         .maxHeight(120)
                         .objectFit(.cover)
