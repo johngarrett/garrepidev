@@ -20,25 +20,18 @@ public struct About: HTMLPage {
         Div("g-about-grid") {
             generateAboutCard(GClasses.aboutCard.rawValue, title: "About this site") {
                 HTMLComponent(.empty) {
-                    Paragraph("Here's where I host all my projects and blogs. I wrote this entirely in Swift and use Github's static pages to host")
-                        .textAlign(.center)
+                    Paragraph("Here's where I host my projects and blogs. I wrote this entirely in Swift and use Github's static pages to host it")
+                        .textAlign(.left)
                     Markdown(cssClass: "about_text markdown-body",
                         """
-                        Check out the source code:
+                        Check out:
+                        - the source code for the site: [garrepidev](https://github.com/johngarrett/garrepidev)
 
-                        [garrepidev](https://github.com/johngarrett/garrepidev)
+                        - the DSL that built what you see: [HyperSwift](https://github.com/johngarrett/HyperSwift)
 
-                        > the source code for all the pages here
-
-                        [HyperSwift](https://github.com/johngarrett/HyperSwift)
-
-                        > the DSL that powers this website
-
-                        [johngarrett.github.io](https://github.com/johngarrett/johngarrett.github.io)
-
-                        > the static github pages you're looking at now
-
-                        [@garrepi](https://twitter.com/garrepi)
+                        - the static site source: [johngarrett.github.io](https://github.com/johngarrett/johngarrett.github.io)
+                        
+                        - my twitter!: [@garrepi](https://twitter.com/garrepi)
                         """
                     )
                     .font(weight: .normal, size: 16, family: "SF Mono")
@@ -50,13 +43,15 @@ public struct About: HTMLPage {
                     HStack(justify: .spaceAround, align: .center, wrap: .reverse) {
                         Markdown(cssClass: "about-me",
                             """
-                            My name's John Garrett. I stuided at UNCC for a bit, then Georgia Tech for a bit. After covid hit, I decided to take a break from school.
+                            My name's John Garrett. I spent my fresman year at UNCC, then Georgia Tech for a bit. After covid hit, I decided to take a break from school.
                             
-                            I'm really intertested in ​Rugby, Reverse Engineering, Pebble Watches, Kernels, Vintage Computing, and Jailbreak Development to name a few.
+                            I'm passionate about rugby, reverse engineering, pebble watches, vintage computing, jailbreaking, and everything inbetween;
+
+                            _I'm passionate about computing_
 
                             There aren't enough hours in the day to finish every project no matter how hard I try.
 
-                            I'm always open to new oppurtunities and work, if you're interested here's my [formal resume](https://garrepi.dev/files/resume.pdf)
+                            That doesn't stop me from looking into new oppurtunities and work, if you're interested here's my [formal resume](https://garrepi.dev/files/resume.pdf)
 
                             Feel free to reach out to me on twitter @garrepi!
                             """
@@ -81,7 +76,7 @@ public struct About: HTMLPage {
                                 HStack(justify: .spaceAround, align: .center) {
                                     Image(url: "https://garrepi.dev/images/twitter.png")
                                         .width(30).height(30)
-                                    Paragraph("@garrepi")
+                                    Paragraph("im @garrepi")
                                         .margin(0)
                                 }
                             }.width(100, .percent)
