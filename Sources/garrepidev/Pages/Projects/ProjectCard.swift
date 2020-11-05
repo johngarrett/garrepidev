@@ -31,12 +31,13 @@ public class ProjectCard: HTMLComponent {
             .margin(top: 10, right: 10, bottom: 10, left: 10)
             .shadow(x: 20, y: 30, color: GColors.cardShadow)
             .border(1, .solid, color: CSSColor("#000000"))
+            .rawCSS("cursor", "pointer")
         
         super.init(.empty, [card])
     }
 }
 extension ProjectCard {
-    convenience init(from project: Project) {
-        self.init(title: project.title, tags: project.tags, text: project.abstract, imgURL: project.imageURL ?? "", href: project.href, externalUrl: project.externalUrl ?? "")
+    convenience init(from project: Project, trackClick: Bool=true) {
+        self.init(title: project.title, tags: project.tags, text: project.abstract, imgURL: project.imageURL ?? "", href: trackClick ? project.href : "", externalUrl: project.externalUrl ?? "")
     }
 }

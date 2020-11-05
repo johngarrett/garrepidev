@@ -19,7 +19,7 @@ public struct ProjectDetail: HTMLPage {
             .padding(top: 1, right: 2, bottom: 1, left: 2, .percent)
             .maxWidth(700, .px)
             
-            ProjectCard(from: project)
+            ProjectCard(from: project, trackClick: false)
         }
         .minHeight(100, .percent)
         .inject(

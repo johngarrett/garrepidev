@@ -5,46 +5,25 @@ public struct About: HTMLPage {
     public var href: String = "/about"
     public var title: String = "garreπ | about"
     
-    private func generateExperienceCard(
-        title: String, summary: String, image: String, tags: [Tag], onClick href: String
-    ) -> HTMLComponent {
-        Div("experience-card", attributes: ["onclick": "location.href='\(href)';"]) {
+    private func generateAboutCard(_ cssClass: String, title: String, body: (() -> (HTMLComponent))) -> HTMLComponent {
+        Div(cssClass) {
             HTMLComponent(.header1) { title }
-                .font(weight: .bold, size: 26, family: "SF Mono")
-                .textAlign(.center)
-            HStack(justify: .center) { tags }.textAlign(.center)
-            Markdown(cssClass: "experience-summary", summary)
-                .textAlign(.center)
-                .font(weight: .normal, size: 13, family: "SF Mono")
-                .color(GColors.lightGray)
-                .margin(right: 10, left: 10, .percent)
-            Image(url: image)
-                .margin(right: 5, left: 5, .percent)
-                .width(90, .percent)
-                .maxHeight(250)
-                .objectFit(.cover)
+                .color(GColors.black)
+                .font(weight: .bold, size: 45, family: "SF Mono")
+                .margin(top: 10, bottom: 10)
+            body()
         }
-        .wordWrap(.brk)
-        .maxWidth(550)
-        .minHeight(300)
-        .margin(top: 10, right: 10, bottom: 10, left: 10)
         .cardStyling()
     }
     
     public func render() -> HTMLComponent {
-        HTMLComponent(.empty) {
-            Div(GClasses.aboutCard.rawValue) {
-                HTMLComponent(.header1) { "About" }
-                    .color(GColors.black)
-                    .font(weight: .bold, size: 45, family: "SF Mono")
-                    .margin(top: 10, bottom: 10)
-
-                Markdown(cssClass: "about_text markdown-body",
+        Div("g-about-grid") {
+            generateAboutCard(GClasses.aboutCard.rawValue, title: "About this site") {
+                HTMLComponent(.empty) {
+                    Paragraph("Here's where I host all my projects and blogs. I wrote this entirely in Swift and use Github's static pages to host")
+                        .textAlign(.center)
+                    Markdown(cssClass: "about_text markdown-body",
                         """
-                        Welcome to my website -- this is where I host all my projects and blogs.
-
-                        This website was written 100% in swift.
-
                         Check out the source code:
 
                         [garrepidev](https://github.com/johngarrett/garrepidev)
@@ -58,51 +37,98 @@ public struct About: HTMLPage {
                         [johngarrett.github.io](https://github.com/johngarrett/johngarrett.github.io)
 
                         > the static github pages you're looking at now
-                        
+
                         [@garrepi](https://twitter.com/garrepi)
                         """
-                )
-                .font(weight: .normal, size: 16, family: "SF Mono")
-                .padding(10)
+                    )
+                    .font(weight: .normal, size: 16, family: "SF Mono")
+                    .padding(10)
+                }
             }
-            .cardStyling()
-            .minWidth(50, .percent)
-            .maxWidth(75, .percent)
-            .margin(top: 30, bottom: 50)
-            .rawCSS("place-self", "center")
-            .rawCSS("align-self", "baseline")
-            
-            /*
-            Paragraph("Experience")
-                 .minWidth(50, .percent)
-                .maxWidth(75, .percent)
-                .cardStyling()
-                .rawCSS("place-self", "center")
-            Div {
-                generateExperienceCard(
-                    title: "SameTunes",
-                    summary: "Compare, compete, and connect with your friends!",
-                    image: "https://sametunes.com/images/header_logo.svg",
-                    tags: [Tag("website"), Tag("music"), Tag("php"), Tag("sql")],
-                    onClick: "https://www.sametunes.com"
-                )
-                generateExperienceCard(
-                    title: "Kabbage",
-                    summary: "iOS development on their Payments app",
-                    image: "https://newsroom.kabbage.com/wp-content/uploads/2019/08/kabbage_logo_horizontal_reverse.jpg",
-                    tags: [Tag("iOS"), Tag("fintech"), Tag("swift")],
-                    onClick: "https://www.kabbage.com"
-                )
+            generateAboutCard("g-about-me", title: "About Me") {
+                VStack {
+                    HStack(justify: .spaceAround, align: .center, wrap: .reverse) {
+                        Markdown(cssClass: "about-me",
+                            """
+                            My name's John Garrett. I stuided at UNCC for a bit, then Georgia Tech for a bit. After covid hit, I decided to take a break from school.
+                            
+                            I'm really intertested in ​Rugby, Reverse Engineering, Pebble Watches, Kernels, Vintage Computing, and Jailbreak Development to name a few.
+
+                            There aren't enough hours in the day to finish every project no matter how hard I try.
+
+                            I'm always open to new oppurtunities and work, if you're interested here's my [formal resume](https://garrepi.dev/files/resume.pdf)
+
+                            Feel free to reach out to me on twitter @garrepi!
+                            """
+                        )
+                        .maxWidth(500)
+                        .textAlign(.left)
+                        .padding(top: 0, right: 20, bottom: 0, left: 10)
+                        Div {
+                            Image(url: "https://garrepi.dev/images/avatar.png")
+                                .height(200)
+                                .width(200)
+                                .rawCSS("place-self", "center")
+                        }.display(.grid)
+                    }
+                    Header(.header3) { "Social Links" }
+                        .textAlign(.center)
+                        .font(weight: .fourhundred, size: 30, family: "SF Mono")
+                        .margin(top: 10, bottom: 10)
+                    Div("about-links") {
+                        VStack(align: .center) {
+                            Link(href: "https://twitter.com/garrepi") {
+                                HStack(justify: .spaceAround, align: .center) {
+                                    Image(url: "https://garrepi.dev/images/twitter.png")
+                                        .width(30).height(30)
+                                    Paragraph("@garrepi")
+                                        .margin(0)
+                                }
+                            }.width(100, .percent)
+                            .rawCSS("cursor", "pointer")
+                            .margin(top: 10)
+                            Link(href: "https://github.com/johngarrett") {
+                                HStack(justify: .spaceAround, align: .center) {
+                                    Image(url: "https://garrepi.dev/images/github.png")
+                                        .width(30).height(30)
+                                    Paragraph("/johngarrett")
+                                        .margin(0)
+                                }
+                            }.width(100, .percent)
+                            .rawCSS("cursor", "pointer")
+                            .margin(top: 10, bottom: 10)
+                            Link(href: "https://linkedin.com/in/johngarrettt") {
+                                HStack(justify: .spaceAround, align: .center) {
+                                    Image(url: "https://garrepi.dev/images/linkedin.png")
+                                        .width(30).height(30)
+                                    Paragraph("/johngarrett")
+                                        .margin(0)
+                                }
+                            }.width(100, .percent)
+                            .rawCSS("cursor", "pointer")
+                            .margin(bottom: 10)
+                        }
+                    }.padding(right: 10, left: 10, .percent)
+                }
             }
-            .display(.grid)
-            .gridGap(2, .rem)
-            .padding(20)
-            .margin(bottom: 20)
-            .rawCSS("grid-template-columns", "repeat(auto-fit, minmax(300px, 1fr));")
-            .rawCSS("justify-items", "center")
-            .rawCSS("place-self", "center")
-             */
         }
+        .display(.grid)
+        .rawCSS("grid-template-columns", "minmax(320px, .4fr) minmax(400px, .6fr)")
+        .alignItems(.baseline)
+        .justifyContent(.center)
+        .gridGap(2, .em)
+        .margin(top: 40, right: 40, bottom: 40, left: 20)
+        .inject(
+            """
+            \n
+            @media (max-width: 944px) {
+                .g-about-grid {
+                    grid-template-columns: minmax(300px, 1fr);
+                }
+            }
+            \n
+            """
+        )
     }
     
     public init() {}

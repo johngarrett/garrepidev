@@ -34,8 +34,10 @@ public class PostCard: HTMLComponent {
                     .width(80, .percent)
                     Image(url: post.imageURL ?? "")
                         .margin(right: 5, left: 5, .percent)
-                        .width(20, .percent)
+                        .maxWidth(150)
+                        .maxHeight(120)
                         .objectFit(.cover)
+                        .overflow(.hidden)
                 }
                 .padding(right: 3, bottom: 1, left: 3, .percent)
             }
@@ -44,6 +46,7 @@ public class PostCard: HTMLComponent {
             .backgroundColor(GColors.white)
             .shadow(x: 20, y: 30, color: GColors.cardShadow)
             .border(1, .solid, color: CSSColor("#000000"))
+            .rawCSS("cursor", "pointer")
         if page == .detailPage {
             card = card
                 .rawCSS("place-self", "center")
