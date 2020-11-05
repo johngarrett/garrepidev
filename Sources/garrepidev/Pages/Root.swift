@@ -54,18 +54,36 @@ public class Head: HTMLComponent {
 
               gtag('config', 'G-YZD103LZ87');
             </script>
-            <meta property="og:locale" content="en_US" />
-            <meta property="og:type" content="website" />
-            <meta property="og:title" content="garreπ" />
-            <meta property="og:description" content="My blogs, projects, and fight for semantic html" />
-            <meta property="og:url" content="https://www.garrepi.dev/" />
-            <meta property="og:site_name" content="garrepi dev" />
-            <meta property="og:image" content="https://www.garrepi.dev/images/avatar.png" />
-            <meta property="og:image:secure_url" content="https://www.garrepi.dev/images/avatar.png" />
-            <meta property="og:image:type" content="image/jpeg" />
-            <meta property="og:image:width" content="300" />
-            <meta property="og:image:height" content="300" />
-            <link rel="icon" type="image/jpeg" href="/images/avatar.jpg" />
+
+            <meta name="description" content="My blogs, projects, and fight for semantic html">
+
+            <!-- Facebook Meta Tags -->
+            <meta property="og:url" content="https://garrepi.dev">
+            <meta property="og:type" content="website">
+            <meta property="og:title" content="garreπ">
+            <meta property="og:description" content="My blogs, projects, and fight for semantic html">
+            <meta property="og:image" content="https://www.garrepi.dev/images/avatar.jpg">
+
+            <!-- Twitter Meta Tags -->
+            <meta name="twitter:card" content="summary_large_image">
+            <meta property="twitter:domain" content="garrepi.dev">
+            <meta property="twitter:url" content="https://garrepi.dev">
+            <meta name="twitter:title" content="garreπ">
+            <meta name="twitter:description" content="My blogs, projects, and fight for semantic html">
+            <meta name="twitter:image" content="https://www.garrepi.dev/images/avatar.jpg">
+
+            <meta property="og:locale" content="en_US">
+            <meta property="og:type" content="website">
+            <meta property="og:title" content="garreπ">
+            <meta property="og:description" content="My blogs, projects, and fight for semantic html">
+            <meta property="og:url" content="https://www.garrepi.dev/">
+            <meta property="og:site_name" content="garrepi dev">
+            <meta property="og:image" content="https://www.garrepi.dev/images/avatar.jpg">
+            <meta property="og:image:secure_url" content="https://www.garrepi.dev/images/avatar.jpg">
+            <meta property="og:image:type" content="image/jpeg">
+            <meta property="og:image:width" content="500">
+            <meta property="og:image:height" content="500">
+            <link rel="icon" type="image/jpeg" href="/images/avatar.jpg">
         </head>
         """
     }
