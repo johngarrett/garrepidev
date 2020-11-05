@@ -22,7 +22,7 @@ public struct Sidebar: ComponentType {
     }
     
     private func makeLink(_ title: String, href: String) -> HTMLComponent {
-        Link(title, cssClass: "g_sidebar-a", href: href)
+        Link("g_sidebar-a", href: href) { title }
             .font(weight: .bold, size: 16, family: "SF Mono")
             .textDecoration(.none)
             .color(GColors.black)

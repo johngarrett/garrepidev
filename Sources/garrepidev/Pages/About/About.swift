@@ -32,7 +32,7 @@ public struct About: HTMLPage {
     }
     
     public func render() -> HTMLComponent {
-        HTMLComponent {
+        HTMLComponent(.empty) {
             Div(GClasses.aboutCard.rawValue) {
                 HTMLComponent(.header1) { "About" }
                     .color(GColors.black)

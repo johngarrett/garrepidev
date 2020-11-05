@@ -5,7 +5,7 @@ import Ink
 public class Markdown: SimpleHTMLComponent {
     private var parser: MarkdownParser!
     override public func render() -> String {
-        Div(self.className) {
+        Div(self.cssClass) {
             self.parser.html(from: self.text)
         }.render()
     }
