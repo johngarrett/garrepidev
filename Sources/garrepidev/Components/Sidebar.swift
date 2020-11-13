@@ -5,20 +5,20 @@ public struct Sidebar: ComponentType {
     public init() { } 
     public func render() -> HTMLComponent {
         VStack("g_sidebar", justify: .flexStart) {
-            HStack("g_sidebar_links", justify: .spaceAround, align: .center){
+            VStack("g_sidebar_links", justify: .flexStart, align: .flexStart) {
                 makeLink("⑊ PROJECTS", href: ProjectsOverview().href)
+                    .margin(top: 5, bottom: 5)
                 makeLink("✑ BLOG", href: BlogOverview().href)
+                    .margin(top: 5, bottom: 5)
                 makeLink("π ABOUT", href: About().href)
+                    .margin(top: 5, bottom: 5)
             }
-            .display(.flex)
-            .textAlign(.center)
             .width(100, .percent)
-            .height(100, .percent)
         }
         .height(100, .percent)
+        .padding(20)
         .backgroundColor(GColors.white)
-        .zIndex(1)
-        .borderBottom(1, .solid, color: CSSColor("#000000"))
+        .border(1, .solid, color: CSSColor("#000000"))
     }
     
     private func makeLink(_ title: String, href: String) -> HTMLComponent {

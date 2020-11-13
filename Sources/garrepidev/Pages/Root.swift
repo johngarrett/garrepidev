@@ -6,15 +6,47 @@ public class Root: HTMLComponent {
     override public func render() -> String {
         let body = Div("g_body") {
             Sidebar().render()
-            Div("g_contet") {
+            Div("g_content") {
                 childComponents?.compactMap { $0 } ?? []
             }
             .display(.grid)
+            .overflow(.scroll)
         }
         .display(.grid)
-        .rawCSS("grid-template-rows", "40px 1fr")
+        .rawCSS("grid-template-columns", "minmax(100px, 150px) 1fr")
+        .overflow(.hidden)
         .rawCSS("width", "100vw")
         .rawCSS("height", "100vh")
+        .inject("""
+         @media (max-width: 666px) {
+                .g_content {
+                    grid-template-columns: 100%;
+                }
+                .g_body {
+                    grid-template-rows: 1fr;
+                    grid-template-columns: unset;
+                }
+                .g_sidebar {
+                    justify-content: flex-start;
+                    flex-direction: row;
+                    order: 1;
+                }
+                .g_sidebar_links {
+                    flex-direction: row;
+                    align-items: flex-start;
+                    justify-content: space-around;
+                }
+                .g_sidebar-a {
+                    margin: 0px;
+                }
+                .g_markdown_content {
+                    padding: 20px;
+                }
+                .g_project_detail_writeup {
+                    padding: 0px;
+                }
+            }
+        """)
         
         return """
         <!DOCTYPE html>

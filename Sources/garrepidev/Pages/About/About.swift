@@ -30,8 +30,6 @@ public struct About: HTMLPage {
                         - the DSL that built what you see: [HyperSwift](https://github.com/johngarrett/HyperSwift)
 
                         - the static site source: [johngarrett.github.io](https://github.com/johngarrett/johngarrett.github.io)
-                        
-                        - my twitter!: [@garrepi](https://twitter.com/garrepi)
                         """
                     )
                     .font(weight: .normal, size: 16, family: "SF Mono")
