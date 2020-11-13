@@ -10,12 +10,12 @@ public class Tag: HTMLComponent {
                 Paragraph(text)
                     .margin(top: 2, right: 10, bottom: 2, left: 10)
                     .textAlign(.center)
-                    .color(GColors.white)
+                    .color(CSSColor(from: SiteColors.elementBackground))
                     .font(weight: .bold, size: 13, family: "SF Mono")
             }
             .backgroundColor(CSSColor("#FFD6AF"))
             .whiteSpace(.nowrap)
-            .shadow(x: 1, y: 2, color: GColors.tagShadow)
+            .shadow(x: 1, y: 2, color: CSSColor(from: SiteColors.tagShadow))
             .display(.inlineBlock)
             .margin(right: 5, left: 5, .px)
         

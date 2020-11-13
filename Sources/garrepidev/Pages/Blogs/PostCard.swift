@@ -15,10 +15,11 @@ public class PostCard: HTMLComponent {
                     HTMLComponent(.header1) { post.title }
                         .font(weight: .bold, size: 25, family: "SF Mono")
                         .width(70, .percent)
+                        .color(SiteColors.primaryText)
                     Paragraph("\(post.date)<br />\(post.getWordCount()) words")
                         .font(weight: .normal, size: 13, family: "SF Mono")
                         .width(20, .percent)
-                        .color(GColors.lightGray)
+                        .color(SiteColors.secondaryText)
                         .textAlign(.right)
                 }
                 .padding(top: 10, right: 15, bottom: 0, left: 15)
@@ -28,7 +29,7 @@ public class PostCard: HTMLComponent {
                         Markdown(cssClass: "g_post_abstract", post.abstract)
                             .textAlign(.left)
                             .font(weight: .normal, size: 13, family: "SF Mono")
-                            .color(GColors.lightGray)
+                            .color(SiteColors.secondaryText)
                         HStack(justify: .center, wrap: .wrap) { post.tags }
                     }
                     Image(url: post.imageURL ?? "")
@@ -42,8 +43,8 @@ public class PostCard: HTMLComponent {
             }
             .wordWrap(.brk)
             .minHeight(200)
-            .backgroundColor(GColors.white)
-            .shadow(x: 20, y: 30, color: GColors.cardShadow)
+            .backgroundColor(SiteColors.elementBackground)
+            .shadow(x: 20, y: 30, color: CSSColor(from: SiteColors.cardShadow))
             .border(1, .solid, color: CSSColor("#000000"))
             .rawCSS("cursor", "pointer")
         if page == .detailPage {

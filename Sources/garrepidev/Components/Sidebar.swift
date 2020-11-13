@@ -17,7 +17,7 @@ public struct Sidebar: ComponentType {
         }
         .height(100, .percent)
         .padding(20)
-        .backgroundColor(GColors.white)
+        .backgroundColor(CSSColor(from: SiteColors.elementBackground))
         .border(1, .solid, color: CSSColor("#000000"))
     }
     
@@ -25,7 +25,7 @@ public struct Sidebar: ComponentType {
         Link("g_sidebar-a", href: href) { title }
             .font(weight: .bold, size: 16, family: "SF Mono")
             .textDecoration(.none)
-            .color(GColors.black)
+            .color(CSSColor(from: SiteColors.primaryText))
             .wordWrap(.brk)
             .overflow(.hidden)
     }

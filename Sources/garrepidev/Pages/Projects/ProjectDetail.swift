@@ -11,9 +11,9 @@ public struct ProjectDetail: HTMLPage {
             Div("g_project_detail_writeup") {
                 MarkdownContent(from: project.readme)
             }
-            .backgroundColor(GColors.white)
+            .backgroundColor(SiteColors.elementBackground)
             .padding(top: 1, right: 2, bottom: 1, left: 2, .percent)
-            .shadow(x: 20, y: 30, color: GColors.cardShadow)
+            .shadow(x: 20, y: 30, color: CSSColor(from: SiteColors.cardShadow))
             .border(1, .solid, color: CSSColor("#000000"))
             .display(.inlineBlock)
             .margin(3, .percent)

@@ -29,11 +29,11 @@ public struct FiveHundred: HTMLPage {
                 """
             ).font(weight: .normal, size: 16, family: "CrimsonText")
         }
-        .backgroundColor(GColors.lightRed)
+        .backgroundColor(SiteColors.fourOFourRed)
         .textAlign(.center)
         .margin(5, .percent)
         .display(.flex)
-        .shadow(x: 20, y: 30, color: GColors.cardShadow)
+        .shadow(x: 20, y: 30, color: CSSColor(from: SiteColors.cardShadow))
         .padding(top: 1, right: 1, bottom: 1, left: 1, .percent)
         .border(1, .solid, color: CSSColor("#000000"))
     }

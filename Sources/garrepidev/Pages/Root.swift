@@ -3,6 +3,9 @@ import HyperSwift
 
 public class Root: HTMLComponent {
     public let head: Head
+    
+   
+    
     override public func render() -> String {
         let body = Div("g_body") {
             Sidebar().render()
@@ -52,7 +55,7 @@ public class Root: HTMLComponent {
         <!DOCTYPE html>
         <html lang="en">
             \(head.render())
-            <body style="margin: 0; background-color: #b5b5b5;">
+            <body style="margin: 0; background-color: \(SiteColors.bodyBackground.description);">
                 \(body.render())
             </body>
         </html>
@@ -75,7 +78,7 @@ public class Head: HTMLComponent {
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
             \(stylesheets.joined(separator: "\n"))
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.css">
+            <link rel="stylesheet" href="https://github.com/johngarrett/darkdown/raw/master/markdown.css" type="text/css">
           <title>\(title)</title>
             <!-- I know, I hate google anayltics. i'm looking for free alternatives - you can disable this if you'd like -->
             <script async src="https://www.googletagmanager.com/gtag/js?id=G-YZD103LZ87"></script>
@@ -108,6 +111,21 @@ public class Head: HTMLComponent {
             <meta property="og:type" content="website">
             <meta property="og:site_name" content="garrepidev">
             <link rel="icon" type="image/jpeg" href="/images/avatar.jpg">
+            <style>
+            :root {
+                \(SiteColors.all.map {
+                    "--\($0.variableName): \($0.light.description);"
+                }.joined(separator: "\n"))
+            }
+            @media (prefers-color-scheme: dark) {
+                :root {
+                    \(SiteColors.all.map {
+                        "--\($0.variableName): \($0.dark.description);"
+                    }.joined(separator: "\n"))
+                }
+            }
+
+            </style>
         </head>
         """
     }

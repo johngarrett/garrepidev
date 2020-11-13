@@ -8,7 +8,7 @@ public struct About: HTMLPage {
     private func generateAboutCard(_ cssClass: String, title: String, body: (() -> (HTMLComponent))) -> HTMLComponent {
         Div(cssClass) {
             HTMLComponent(.header1) { title }
-                .color(GColors.black)
+                .color(SiteColors.primaryText)
                 .font(weight: .bold, size: 45, family: "SF Mono")
                 .margin(top: 10, bottom: 10)
             body()
@@ -130,9 +130,9 @@ public struct About: HTMLPage {
 private extension HTMLComponent {
     func cardStyling() -> HTMLComponent {
         self
-            .backgroundColor(GColors.white)
+            .backgroundColor(CSSColor(from: SiteColors.elementBackground))
             .textAlign(.center)
-            .shadow(x: 20, y: 30, color: GColors.cardShadow)
+            .shadow(x: 20, y: 30, color: CSSColor(from: SiteColors.cardShadow))
             .border(1, .solid, color: CSSColor("#000000"))
             .padding(10)
     }

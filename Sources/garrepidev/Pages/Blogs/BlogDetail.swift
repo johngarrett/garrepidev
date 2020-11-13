@@ -17,7 +17,7 @@ public struct BlogDetail: HTMLPage {
             .display(.grid)
             .alignItems(.center)
             .padding(top: 40, right: 20, bottom: 40, left: 20)
-            .backgroundColor(GColors.white)
+            .backgroundColor(SiteColors.elementBackground)
             .borderTop(1, .solid, color: CSSColor("#000000"))
             .borderBottom(1, .solid, color: CSSColor("#000000"))
             .rawCSS("place-content", "center")
