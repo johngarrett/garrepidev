@@ -123,7 +123,7 @@ public class Head: HTMLComponent {
             @media (prefers-color-scheme: dark) {
                 :root {
                     \(SiteColors.all.map {
-                        "--\($0.variableName): \($0.dark.description);"
+                        "--\($0.variableName): \($0.light.description);"
                     }.joined(separator: "\n"))
                 }
             }

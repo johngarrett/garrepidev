@@ -18,8 +18,7 @@ public struct ProjectsOverview: HTMLPage {
         }
         .display(.grid)
         .gridGap(2, .rem)
-        .margin(top: 20)
-        .margin(bottom: 20)
+        .margin(20, for: .vertical)
         .add(
             styles:
                 CSSStyle("grid-template-columns", "repeat(auto-fit, minmax(300px, 1fr))"),

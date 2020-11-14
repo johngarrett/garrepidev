@@ -31,7 +31,6 @@ public class GBase: HTMLComponent {
             case .BlogOverview:
                 return blogOverview
             case .BlogDetail:
-                print(blogOverview.blogDetailPages.map { $0.post.href })
                 return blogOverview.blogDetailPages.first(where: {$0.post.href == href}) ?? FourOFour()
             case .ProjectsOverview:
                 return projectsOverview

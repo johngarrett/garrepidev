@@ -10,7 +10,7 @@ public struct About: HTMLPage {
             HTMLComponent(.header1) { title }
                 .color(SiteColors.primaryText)
                 .font(weight: .bold, size: 45, family: "SF Mono")
-                .margin(top: 10, bottom: 10)
+                .margin(10, for: .vertical)
             body()
         }
         .cardStyling()

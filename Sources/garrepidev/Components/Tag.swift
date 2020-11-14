@@ -17,8 +17,8 @@ public class Tag: HTMLComponent {
             .whiteSpace(.nowrap)
             .shadow(x: 1, y: 2, color: CSSColor(from: SiteColors.tagShadow))
             .display(.inlineBlock)
-            .margin(right: 5, left: 5, .px)
-        
+            .margin(5, for: .horizontal)
+
         super.init(.empty, [tag])
     }
 }

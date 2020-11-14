@@ -40,7 +40,7 @@ extension HTMLComponent {
 public struct SiteColors {
     static let primaryText = SiteColor("primary-text", light: "black", dark: "white")
     static let secondaryText = SiteColor("secondary-text", light: "#6C6C6C", dark: "#D2D2D2")
-    static let bodyBackground = SiteColor("body-background", light: "#6C6C6C", dark: "#434343")
+    static let bodyBackground = SiteColor("body-background", light: "#b5b5b5", dark: "#434343")
     static let elementBackground = SiteColor("element-background", light: "white", dark: "#171717")
     static let fourOFourRed = SiteColor("fourOfour-red", light: "#FFC0C0", dark: "#FFC0C0")
     static let cardShadow = SiteColor(

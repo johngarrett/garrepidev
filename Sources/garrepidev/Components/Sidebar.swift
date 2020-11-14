@@ -7,11 +7,11 @@ public struct Sidebar: ComponentType {
         VStack("g_sidebar", justify: .flexStart) {
             VStack("g_sidebar_links", justify: .flexStart, align: .flexStart) {
                 makeLink("⑊ PROJECTS", href: ProjectsOverview().href)
-                    .margin(top: 5, bottom: 5)
+                    .margin(5, for: .vertical)
                 makeLink("✑ BLOG", href: BlogOverview().href)
-                    .margin(top: 5, bottom: 5)
+                    .margin(5, for: .vertical)
                 makeLink("π ABOUT", href: About().href)
-                    .margin(top: 5, bottom: 5)
+                    .margin(5, for: .vertical)
             }
             .width(100, .percent)
         }
