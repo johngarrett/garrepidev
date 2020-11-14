@@ -20,8 +20,11 @@ public struct ProjectsOverview: HTMLPage {
         .gridGap(2, .rem)
         .margin(top: 20)
         .margin(bottom: 20)
-        .rawCSS("grid-template-columns", "repeat(auto-fit, minmax(300px, 1fr));")
-        .rawCSS("align-content", "baseline")
+        .add(
+            styles:
+                CSSStyle("grid-template-columns", "repeat(auto-fit, minmax(300px, 1fr))"),
+                CSSStyle("align-content", "baseline")
+        )
     }
 }
 

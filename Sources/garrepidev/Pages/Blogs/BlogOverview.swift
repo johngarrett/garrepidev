@@ -24,10 +24,13 @@ public struct BlogOverview: HTMLPage {
             posts.compactMap { $0 }.map{ PostCard($0, for: .overviewPage) }
         }
         .display(.grid)
-        .rawCSS("grid-row-gap", "2em")
         .justifyContent(.center)
-        .rawCSS("grid-template-columns", "1fr")
         .margin(top: 20, right: 40, bottom: 40, left: 20)
-        .rawCSS("align-content", "baseline")
+        .add(
+            styles:
+                CSSStyle("grid-row-gap", "2em"),
+                CSSStyle("align-content", "baseline"),
+                CSSStyle("grid-template-columns", "1fr")
+        )
     }
 }

@@ -25,14 +25,14 @@ public class ProjectCard: HTMLComponent {
                     .textAlign(.center)
                     .textDecoration(.none)
             }
-            .wordWrap(.brk)
+            .wordWrap(.breakWord)
             .maxWidth(550)
             .minHeight(300)
             .backgroundColor(SiteColors.elementBackground)
             .margin(top: 10, right: 30, bottom: 10, left: 10)
             .shadow(x: 20, y: 30, color: CSSColor(from: SiteColors.cardShadow))
             .border(1, .solid, color: CSSColor("#000000"))
-            .rawCSS("cursor", "pointer")
+            .add(style: CSSStyle("cursor", "pointer"))
             .inject(
                 """
                 @media (max-width: 500px) {

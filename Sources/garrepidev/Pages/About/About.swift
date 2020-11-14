@@ -42,7 +42,7 @@ public struct About: HTMLPage {
                         Markdown(cssClass: "about-me",
                             """
                             My name's John Garrett. I spent my fresman year at UNCC, then Georgia Tech for a bit. After covid hit, I decided to take a break from school.
-                            
+
                             I'm passionate about rugby, reverse engineering, pebble watches, vintage computing, jailbreaking, and everything inbetween;
 
                             _I'm passionate about computing_
@@ -61,13 +61,13 @@ public struct About: HTMLPage {
                             Image(url: "https://garrepi.dev/images/avatar.jpg")
                                 .height(200)
                                 .width(200)
-                                .rawCSS("place-self", "center")
+                                .add(style: CSSStyle("place-self", "center"))
                         }.display(.grid)
                     }
                     Header(.header3) { "Social Links" }
                         .textAlign(.center)
                         .font(weight: .fourhundred, size: 30, family: "SF Mono")
-                        .margin(top: 10, bottom: 10)
+                        .margin(10, for: .vertical)
                     Div("about-links") {
                         VStack(align: .center) {
                             Link(href: "https://twitter.com/garrepi") {
@@ -78,7 +78,7 @@ public struct About: HTMLPage {
                                         .margin(0)
                                 }
                             }.width(100, .percent)
-                            .rawCSS("cursor", "pointer")
+                            .add(style: CSSStyle("cursor", "pointer"))
                             .margin(top: 10)
                             Link(href: "https://github.com/johngarrett") {
                                 HStack(justify: .spaceAround, align: .center) {
@@ -88,8 +88,8 @@ public struct About: HTMLPage {
                                         .margin(0)
                                 }
                             }.width(100, .percent)
-                            .rawCSS("cursor", "pointer")
-                            .margin(top: 10, bottom: 10)
+                            .add(style: CSSStyle("cursor", "pointer"))
+                            .margin(10, for: .vertical)
                             Link(href: "https://linkedin.com/in/johngarrettt") {
                                 HStack(justify: .spaceAround, align: .center) {
                                     Image(url: "https://garrepi.dev/images/linkedin.png")
@@ -98,15 +98,15 @@ public struct About: HTMLPage {
                                         .margin(0)
                                 }
                             }.width(100, .percent)
-                            .rawCSS("cursor", "pointer")
+                            .add(style: CSSStyle("cursor", "pointer"))
                             .margin(bottom: 10)
                         }
-                    }.padding(right: 10, left: 10, .percent)
+                    }.padding(10, for: .horizontal)
                 }
             }
         }
         .display(.grid)
-        .rawCSS("grid-template-columns", "minmax(320px, .4fr) minmax(400px, .6fr)")
+        .add(style: CSSStyle("grid-template-columns", "minmax(320px, .4fr) minmax(400px, .6fr)"))
         .alignItems(.baseline)
         .justifyContent(.center)
         .gridGap(2, .em)

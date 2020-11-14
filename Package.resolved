@@ -6,7 +6,7 @@
         "repositoryURL": "https://github.com/johngarrett/HyperSwift",
         "state": {
           "branch": "master",
-          "revision": "7ed9029d8f728da396f9c1fea9f932e172720d9f",
+          "revision": "a94ac4d769a0114ca14a0bba41034306c6c55057",
           "version": null
         }
       },
@@ -96,8 +96,8 @@
         "repositoryURL": "https://github.com/JohnSundell/Splash",
         "state": {
           "branch": null,
-          "revision": "f25dd8c9f16be1f81a152f6861d7216c3c9302da",
-          "version": "0.14.0"
+          "revision": "81de0389558ad40579027735841593b21a511fa8",
+          "version": "0.15.0"
         }
       }
     ]

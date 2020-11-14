@@ -41,15 +41,15 @@ public class PostCard: HTMLComponent {
                 }
                 .padding(right: 3, bottom: 1, left: 3, .percent)
             }
-            .wordWrap(.brk)
+            .wordWrap(.breakWord)
             .minHeight(200)
             .backgroundColor(SiteColors.elementBackground)
             .shadow(x: 20, y: 30, color: CSSColor(from: SiteColors.cardShadow))
             .border(1, .solid, color: CSSColor("#000000"))
-            .rawCSS("cursor", "pointer")
+            .add(style: CSSStyle("cursor", "pointer"))
         if page == .detailPage {
             card = card
-                .rawCSS("place-self", "center")
+                .add(style: CSSStyle("place-self", "center"))
                 .width(80, .percent)
                 .maxWidth(800)
                 .margin(top: 30, bottom: 50)

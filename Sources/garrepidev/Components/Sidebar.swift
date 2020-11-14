@@ -26,7 +26,7 @@ public struct Sidebar: ComponentType {
             .font(weight: .bold, size: 16, family: "SF Mono")
             .textDecoration(.none)
             .color(CSSColor(from: SiteColors.primaryText))
-            .wordWrap(.brk)
+            .wordWrap(.breakWord)
             .overflow(.hidden)
     }
 }

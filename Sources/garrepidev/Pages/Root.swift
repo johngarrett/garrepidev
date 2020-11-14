@@ -16,10 +16,13 @@ public class Root: HTMLComponent {
             .overflow(.scroll)
         }
         .display(.grid)
-        .rawCSS("grid-template-columns", "minmax(100px, 150px) 1fr")
+        .add(
+            styles:
+                CSSStyle("grid-template-columns", "minmax(100px, 150px) 1fr"),
+                CSSStyle("width", "100vw"),
+                CSSStyle("height", "100vh")
+        )
         .overflow(.hidden)
-        .rawCSS("width", "100vw")
-        .rawCSS("height", "100vh")
         .inject("""
          @media (max-width: 666px) {
                 .g_content {
