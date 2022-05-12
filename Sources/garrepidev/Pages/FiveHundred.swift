@@ -13,7 +13,7 @@ public struct FiveHundred: HTMLPage {
                 Image(url: "/images/error_bomb.png")
                     .width(100)
                     .height(100)
-                Header(.header3) { "HTTP 500" }
+                Header(.h3) { "HTTP 500" }
                     .font(weight: .bold, size: 40, family: "SF Mono")
             }
             

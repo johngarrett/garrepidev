@@ -10,7 +10,7 @@ public class Root: HTMLComponent {
         let body = Div("g_body") {
             Sidebar().render()
             Div("g_content") {
-                childComponents?.compactMap { $0 } ?? []
+                children.compactMap { $0 }
             }
             .display(.grid)
             .overflow(.scroll)
@@ -65,9 +65,11 @@ public class Root: HTMLComponent {
         """
     }
     
-    public init(_ head: Head, _ components: [HTMLComponent]?) {
+    public init(_ head: Head, _ components: [HTMLComponent]) {
         self.head = head
-        super.init(.head, components)
+        super.init(.head) {
+            components
+        }
     }
 }
 
@@ -136,7 +138,7 @@ public class Head: HTMLComponent {
     public init(title: String, stylesheets: [String]? = nil) {
         self.title = title
         self.stylesheets = stylesheets ?? []
-        super.init(.head)
+        super.init(.head) { }
     }
 }
 
@@ -157,6 +159,8 @@ extension Root {
 @resultBuilder
 public struct RootBuilder {
     static public func buildBlock(_ components: HTMLComponent...) -> HTMLComponent {
-        return HTMLComponent(.empty, components)
+        HTMLComponent(.empty) {
+            components
+        }
     }
 }

@@ -16,6 +16,6 @@ public class MarkdownContent: HTMLComponent {
             }
             .font(weight: .normal, size: 16, family: "CrimsonText")
             .textAlign(.left)
-        super.init(.empty, [card])
+        super.init(card)
     }
 }

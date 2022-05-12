@@ -11,7 +11,7 @@ public struct FourOFour: HTMLPage {
             Image(url: "/images/error_bomb.png")
                 .width(200)
                 .height(200)
-            Header(.header3) { "HTTP 404" }
+            Header(.h3) { "HTTP 404" }
                 .font(weight: .bold, size: 40, family: "SF Mono")
             Paragraph("Page Not Found")
         }

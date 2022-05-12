@@ -5,7 +5,7 @@ public class ProjectCard: HTMLComponent {
     public init(title: String, tags: [Tag], text: String, imgURL: String, href: String, externalUrl: String) {
         let card =
             Div(GClasses.projectCard.rawValue, attributes: ["onclick": "location.href='\(href)';"]) {
-                HTMLComponent(.header1) { title }
+                HTMLComponent(.h1) { title }
                     .font(weight: .bold, size: 26, family: "SF Mono")
                     .textAlign(.center)
                     .color(SiteColors.primaryText)
@@ -20,7 +20,9 @@ public class ProjectCard: HTMLComponent {
                     .width(90, .percent)
                     .maxHeight(250)
                     .objectFit(.cover)
-                HTMLComponent(.a, attributes: ["href": externalUrl], [Paragraph("External Link")])
+                HTMLComponent(.a, attributes: ["href": externalUrl]) {
+                    Paragraph("External Link")
+                }
                     .width(100, .percent)
                     .textAlign(.center)
                     .textDecoration(.none)
@@ -46,7 +48,7 @@ public class ProjectCard: HTMLComponent {
                 """
             )
         
-        super.init(.empty, [card])
+        super.init(card)
     }
 }
 extension ProjectCard {

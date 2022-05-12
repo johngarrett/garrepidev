@@ -7,7 +7,7 @@ public struct About: HTMLPage {
     
     private func generateAboutCard(_ cssClass: String, title: String, body: (() -> (HTMLComponent))) -> HTMLComponent {
         Div(cssClass) {
-            HTMLComponent(.header1) { title }
+            HTMLComponent(.h1) { title }
                 .color(SiteColors.primaryText)
                 .font(weight: .bold, size: 45, family: "SF Mono")
                 .margin(10, for: .vertical)
@@ -64,7 +64,7 @@ public struct About: HTMLPage {
                                 .add(style: CSSStyle("place-self", "center"))
                         }.display(.grid)
                     }
-                    Header(.header3) { "Social Links" }
+                    Header(.h3) { "Social Links" }
                         .textAlign(.center)
                         .font(weight: .fourhundred, size: 30, family: "SF Mono")
                         .margin(10, for: .vertical)

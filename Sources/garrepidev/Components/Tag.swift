@@ -19,6 +19,6 @@ public class Tag: HTMLComponent {
             .display(.inlineBlock)
             .margin(5, for: .horizontal)
 
-        super.init(.empty, [tag])
+        super.init(tag)
     }
 }

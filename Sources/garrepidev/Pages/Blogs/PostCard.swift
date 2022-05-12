@@ -12,7 +12,7 @@ public class PostCard: HTMLComponent {
         var card =
             Div(cssClass, attributes: attributes) {
                 HStack("g_post_top", justify: .spaceBetween, align: .center, wrap: .wrap) {
-                    HTMLComponent(.header1) { post.title }
+                    HTMLComponent(.h1) { post.title }
                         .font(weight: .bold, size: 25, family: "SF Mono")
                         .width(70, .percent)
                         .color(SiteColors.primaryText)
@@ -55,6 +55,6 @@ public class PostCard: HTMLComponent {
                 .margin(top: 30, bottom: 50)
         }
         
-        super.init(.empty, [card])
+        super.init(card)
     }
 }
