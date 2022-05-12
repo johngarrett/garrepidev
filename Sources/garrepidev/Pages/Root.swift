@@ -16,9 +16,9 @@ public class Root: HTMLComponent {
         .display(.grid)
         .add(
             styles:
-                CSSStyle("grid-template-columns", "minmax(100px, 150px) 1fr"),
-                CSSStyle("width", "100vw"),
-                CSSStyle("height", "100vh")
+                Style("grid-template-columns", "minmax(100px, 150px) 1fr"),
+                Style("width", "100vw"),
+                Style("height", "100vh")
         )
         .overflow(.hidden)
         .inject("""

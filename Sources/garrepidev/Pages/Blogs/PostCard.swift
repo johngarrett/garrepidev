@@ -46,10 +46,10 @@ public class PostCard: HTMLComponent {
             .backgroundColor(SiteColors.elementBackground)
             .shadow(x: 20, y: 30, color: CSSColor(from: SiteColors.cardShadow))
             .border(1, .solid, color: CSSColor("#000000"))
-            .add(style: CSSStyle("cursor", "pointer"))
+            .add(style: Style("cursor", "pointer"))
         if page == .detailPage {
             card = card
-                .add(style: CSSStyle("place-self", "center"))
+                .add(style: Style("place-self", "center"))
                 .width(80, .percent)
                 .maxWidth(800)
                 .margin(top: 30, bottom: 50)

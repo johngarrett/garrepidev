@@ -9,7 +9,7 @@ struct GHandler {
 
     func cssHandler(request: HTTPRequest, response: HTTPResponse) {
         response.setHeader(.contentType, value: "text/css")
-        response.appendBody(string: CSSStyleSheet.generateStyleSheet())
+        response.appendBody(string: StyleSheet.generateStyleSheet())
         response.appendBody(string: """
             body {
                 font-family: "SF Mono";

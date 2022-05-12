@@ -20,7 +20,7 @@ public struct BlogDetail: HTMLPage {
             .backgroundColor(SiteColors.elementBackground)
             .borderTop(1, .solid, color: CSSColor("#000000"))
             .borderBottom(1, .solid, color: CSSColor("#000000"))
-            .add(style: CSSStyle("place-content", "center"))
+            .add(style: Style("place-content", "center"))
         }
     }
     

@@ -61,7 +61,7 @@ public struct About: HTMLPage {
                             Image(url: "https://garrepi.dev/images/avatar.jpg")
                                 .height(200)
                                 .width(200)
-                                .add(style: CSSStyle("place-self", "center"))
+                                .add(style: Style("place-self", "center"))
                         }.display(.grid)
                     }
                     Header(.h3) { "Social Links" }
@@ -78,7 +78,7 @@ public struct About: HTMLPage {
                                         .margin(0)
                                 }
                             }.width(100, .percent)
-                            .add(style: CSSStyle("cursor", "pointer"))
+                            .add(style: Style("cursor", "pointer"))
                             .margin(top: 10)
                             Link(href: "https://github.com/johngarrett") {
                                 HStack(justify: .spaceAround, align: .center) {
@@ -88,7 +88,7 @@ public struct About: HTMLPage {
                                         .margin(0)
                                 }
                             }.width(100, .percent)
-                            .add(style: CSSStyle("cursor", "pointer"))
+                            .add(style: Style("cursor", "pointer"))
                             .margin(10, for: .vertical)
                             Link(href: "https://linkedin.com/in/johngarrettt") {
                                 HStack(justify: .spaceAround, align: .center) {
@@ -98,7 +98,7 @@ public struct About: HTMLPage {
                                         .margin(0)
                                 }
                             }.width(100, .percent)
-                            .add(style: CSSStyle("cursor", "pointer"))
+                            .add(style: Style("cursor", "pointer"))
                             .margin(bottom: 10)
                         }
                     }.padding(10, for: .horizontal)
@@ -106,7 +106,7 @@ public struct About: HTMLPage {
             }
         }
         .display(.grid)
-        .add(style: CSSStyle("grid-template-columns", "minmax(320px, .4fr) minmax(400px, .6fr)"))
+        .add(style: Style("grid-template-columns", "minmax(320px, .4fr) minmax(400px, .6fr)"))
         .alignItems(.baseline)
         .justifyContent(.center)
         .gridGap(2, .em)

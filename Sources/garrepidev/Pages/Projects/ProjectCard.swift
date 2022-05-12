@@ -34,7 +34,7 @@ public class ProjectCard: HTMLComponent {
             .margin(top: 10, right: 30, bottom: 10, left: 10)
             .shadow(x: 20, y: 30, color: CSSColor(from: SiteColors.cardShadow))
             .border(1, .solid, color: CSSColor("#000000"))
-            .add(style: CSSStyle("cursor", "pointer"))
+            .add(style: Style("cursor", "pointer"))
             .inject(
                 """
                 @media (max-width: 500px) {

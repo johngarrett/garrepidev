@@ -7,7 +7,7 @@ struct Generator {
     public let sidebar = Sidebar()
     
     func generateCssSheet() {
-        var stylesheet = CSSStyleSheet.generateStyleSheet()
+        var stylesheet = StyleSheet.generateStyleSheet()
         stylesheet +=
         """
         @font-face {

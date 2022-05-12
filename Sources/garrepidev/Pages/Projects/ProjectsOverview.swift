@@ -21,8 +21,8 @@ public struct ProjectsOverview: HTMLPage {
         .margin(20, for: .vertical)
         .add(
             styles:
-                CSSStyle("grid-template-columns", "repeat(auto-fit, minmax(300px, 1fr))"),
-                CSSStyle("align-content", "baseline")
+                Style("grid-template-columns", "repeat(auto-fit, minmax(300px, 1fr))"),
+                Style("align-content", "baseline")
         )
     }
 }

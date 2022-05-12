@@ -28,9 +28,9 @@ public struct BlogOverview: HTMLPage {
         .margin(top: 20, right: 40, bottom: 40, left: 20)
         .add(
             styles:
-                CSSStyle("grid-row-gap", "2em"),
-                CSSStyle("align-content", "baseline"),
-                CSSStyle("grid-template-columns", "1fr")
+                Style("grid-row-gap", "2em"),
+                Style("align-content", "baseline"),
+                Style("grid-template-columns", "1fr")
         )
     }
 }
