@@ -154,7 +154,7 @@ extension Root {
         )
     }
 }
-@_functionBuilder
+@resultBuilder
 public struct RootBuilder {
     static public func buildBlock(_ components: HTMLComponent...) -> HTMLComponent {
         return HTMLComponent(.empty, components)

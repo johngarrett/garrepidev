@@ -10,9 +10,9 @@ let package = Package(
         .executable(name: "garrepi.static", targets: ["garrepi.static"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/johngarrett/HyperSwift", .branch("master")),
+        .package(url: "https://github.com/johngarrett/HyperSwift", .branch("garrepi/may-rewrite")),
         .package(name: "Ink", url: "https://github.com/johnsundell/ink.git", from: "0.1.0"),
-        .package(name: "PerfectHTTPServer", url: "https://github.com/PerfectlySoft/Perfect-HTTPServer.git", from: "3.0.0"),
+        .package(name: "PerfectHTTPServer", url: "https://github.com/PerfectlySoft/Perfect-HTTPServer.git", from: "3.0.23"),
         .package(name: "Splash", url: "https://github.com/JohnSundell/Splash", from: "0.14.0")
     ],
     targets: [
