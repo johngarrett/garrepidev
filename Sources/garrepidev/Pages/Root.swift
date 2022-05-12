@@ -4,8 +4,6 @@ import HyperSwift
 public class Root: HTMLComponent {
     public let head: Head
     
-   
-    
     override public func render() -> String {
         let body = Div("g_body") {
             Sidebar().render()
@@ -65,11 +63,9 @@ public class Root: HTMLComponent {
         """
     }
     
-    public init(_ head: Head, _ components: [HTMLComponent]) {
+    public init(_ head: Head, _ page: HTMLPage) {
         self.head = head
-        super.init(.head) {
-            components
-        }
+        super.init(.head, children: [page.render()])
     }
 }
 
@@ -138,29 +134,7 @@ public class Head: HTMLComponent {
     public init(title: String, stylesheets: [String]? = nil) {
         self.title = title
         self.stylesheets = stylesheets ?? []
-        super.init(.head) { }
+        super.init(.head, children: [])
     }
 }
-
-extension Root {
-    convenience public init(title: String, @RootBuilder _ components: () -> [HTMLComponent]) {
-        self.init(
-            Head(title: title),
-            components()
-        )
-    }
-    convenience public init(title: String, @RootBuilder _ component: () -> HTMLComponent) {
-        self.init(
-            Head(title: title),
-            [component()]
-        )
-    }
-}
-@resultBuilder
-public struct RootBuilder {
-    static public func buildBlock(_ components: HTMLComponent...) -> HTMLComponent {
-        HTMLComponent(.empty) {
-            components
-        }
-    }
-}
+        

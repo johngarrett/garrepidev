@@ -11,7 +11,7 @@ public class GBase: HTMLComponent {
     public let projectsOverview: ProjectsOverview
     
     public override func render() -> String {
-        Root(head, [body.render()]).render()
+        Root(head, body).render()
     }
     
     public init(_ head: Head, _ about: About, _ blogOverview: BlogOverview, _ projectsOverview: ProjectsOverview) {

@@ -106,7 +106,7 @@ struct Generator {
                 "<link rel=\"stylesheet\" href=\"/css/styles.css\">"
             ]
         )
-        let htmlOutput = Root(head, [page.render()]).render()
+        let htmlOutput = Root(head, page).render()
         
         do {
             try htmlOutput.write(
